@@ -1,0 +1,42 @@
+*** Settings ***
+Documentation     A resource file containing the application specific keywords
+...               that create our own domain specific language. This resource
+...               implements keywords for testing HTML version of the test
+...               application.
+Library           Selenium2Library
+
+*** Variables ***
+${SERVER}         ecsd001004eb.epam.com:18080
+${BROWSER}        firefox
+${DELAY}          0
+${VALID USER}     admin
+${VALID PASSWD}    admin
+${LOGIN URL}      http://${SERVER}/cmp/
+${WELCOME URL}    http://${SERVER}/cmp/analyze#
+${ERROR URL}      http://${SERVER}/cmp/login?login_error=1
+
+*** Keywords ***
+Open Browser To Login Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+
+Go To Login Page
+    Go To    ${LOGIN URL}
+
+Input Username
+    [Arguments]    ${username}
+    Input Text    j_username    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text    j_password    ${password}
+
+Submit Credentials
+    Click Button    xpath=//button[@type='submit']
+
+Welcome Page Should Be Open
+    Location Should Be    ${WELCOME URL}
+
+Login Should Have Failed
+    Location Should Be    ${ERROR URL}
