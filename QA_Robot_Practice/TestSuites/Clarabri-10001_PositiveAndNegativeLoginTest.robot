@@ -8,7 +8,7 @@ Resource         ../utils/RandomWordsUtil.robot
 *** Variables ***
 ${WELCOM_URL}     ${LOGIN_URL}/analyze#
 ${ERROR_URL}      ${LOGIN_URL}/login?login_error=1
-${CREDENTIAL_SIZE}     5
+${CREDENTIAL_SIZE}    5
 
 *** Test Cases ***
 Valid Credentials Test
@@ -21,17 +21,17 @@ Invalid Login Test
     ${login}     Generate Random Credential     ${CREDENTIAL_SIZE}
     Login To Clarabridge        ${login}          ${USER_PASSWORD}
     Check Location     ${ERROR_URL}
-    Check Error Login Message
+    Check Error Login Message Presence
 
 Invalid Password Test
     ${password}    Generate Random Credential     ${CREDENTIAL_SIZE}
     Login To Clarabridge       ${USER_LOGIN}        ${password}
     Check Location     ${ERROR_URL}
-    Check Error Login Message
+    Check Error Login Message Presence
 
 Invalid Login And Password Test
     ${login}    Generate Random Credential     ${CREDENTIAL_SIZE}
     ${password}    Generate Random Credential     ${CREDENTIAL_SIZE}
     Login To Clarabridge       ${login}          ${password}
     Check Location     ${ERROR_URL}
-    Check Error Login Message
+    Check Error Login Message Presence

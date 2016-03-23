@@ -22,7 +22,7 @@ Check Location
     ${actuaslLocation}    Get Location
     Should Be Equal    ${expectedLocation}    ${actuaslLocation}    Location is ${actuaslLocation} but should be ${expectedLocation}
 
-Check Error Login Message
+Check Error Login Message Presence
     Page Should Contain Element    ${ERROR_CASE_ELEMENT}    The Login page doesn't contain error message element, but should be
 
 Check Main Page Contents Last Login Label
