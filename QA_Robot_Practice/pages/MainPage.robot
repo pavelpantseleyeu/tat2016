@@ -7,9 +7,11 @@ Confirm Error Message
     Wait Until Element Is Visible  ${OK_BUTTON_LOCATOR}
     Click Element  ${OK_BUTTON_LOCATOR}
 
-Sign Out
+Click On System Dropdown
     Wait Until Element Is Visible  ${SYSTEM_DROPDOWN_LOCATOR}
     Click Element  ${SYSTEM_DROPDOWN_LOCATOR}
+
+Click Sign Out
     Wait Until Element Is Visible  ${LOGOUT_LINK_LOCATOR}
     Click Element  ${LOGOUT_LINK_LOCATOR}
 

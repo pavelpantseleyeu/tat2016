@@ -1,14 +1,14 @@
 *** Settings ***
-Documentation    This is implementing of the login functionality
-Resource         ../pages/LoginPage.robot
-Resource         ../pages/MainPage.robot
+Resource         ../../pages/LoginPage.robot
+Resource         ../../pages/MainPage.robot
 
 *** Keywords ***
 Open Login Page
     Open Browser On Login Page
 
-Sign Out Clarabridge
-    Sign Out
+Sign Out
+    Click On System Dropdown
+    Click Sign Out
 
 Login To Clarabridge
     [Arguments]    ${username}    ${password}

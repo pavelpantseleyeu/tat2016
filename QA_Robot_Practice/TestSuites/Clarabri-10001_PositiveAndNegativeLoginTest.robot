@@ -1,8 +1,8 @@
 *** Settings ***
-Documentation     A test suite with positive login tests.
+Documentation     A test suite with positive and negative login tests.
 Suite Setup       Open Login Page
 Suite Teardown    Close Browser
-Resource         ../services/LoginService.robot
+Resource         ../services/UI/LoginServiceUI.robot
 Resource         ../utils/RandomWordsUtil.robot
 
 *** Variables ***
@@ -11,11 +11,11 @@ ${ERROR_URL}      ${LOGIN_URL}/login?login_error=1
 ${CREDENTIAL_SIZE}    5
 
 *** Test Cases ***
-Valid Credentials Login Test
+Valid Credentials Test
     Login To Clarabridge    ${USER_LOGIN}    ${USER_PASSWORD}
     Go To Projects Page
     Check Location     ${WELCOM_URL}
-    [Teardown]    Sign Out Clarabridge
+    [Teardown]    Sign Out
 
 Invalid Login Test
     ${login}     Generate Random Credential     ${CREDENTIAL_SIZE}
