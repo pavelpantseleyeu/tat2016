@@ -1,15 +1,18 @@
 *** Settings ***
-Resource          ../globalConfig/GlobalSettings.robot
 Resource          res/MainPageLocators.robot
 Library           Selenium2Library
 
 *** Keywords ***
-Skip message
-    wait until element is enabled  ${CLOSE_BUTTON_LOCATOR}
-    click element  ${CLOSE_BUTTON_LOCATOR}
+Confirm Error Message
+    Wait Until Element Is Visible  ${OK_BUTTON_LOCATOR}
+    Click Element  ${OK_BUTTON_LOCATOR}
 
-Sign out
-    WAIT UNTIL ELEMENT IS ENABLED  ${SYSTEM_LINK_LOCATOR}
-    click element  ${SYSTEM_LINK_LOCATOR}
-    wait until element is enabled  ${LOGOUT_LINK_LOCATOR}
-    click element  ${LOGOUT_LINK_LOCATOR}
+Sign Out
+    Wait Until Element Is Visible  ${SYSTEM_DROPDOWN_LOCATOR}
+    Click Element  ${SYSTEM_DROPDOWN_LOCATOR}
+    Wait Until Element Is Visible  ${LOGOUT_LINK_LOCATOR}
+    Click Element  ${LOGOUT_LINK_LOCATOR}
+
+Click On Logo
+    Wait Until Element Is Visible  ${LOGO_LOCATOR}
+    Click Element  ${LOGO_LOCATOR}

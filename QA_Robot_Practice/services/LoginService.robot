@@ -2,20 +2,22 @@
 Documentation    This is implementing of the login functionality
 Resource         ../pages/LoginPage.robot
 Resource         ../pages/MainPage.robot
-Resource         ../globalConfig/GlobalSettings.robot
 
 *** Keywords ***
 Open Login Page
-    Open browser in login
+    Open Browser On Login Page
 
 Sign Out Clarabridge
-    sign out
+    Sign Out
 
 Login To Clarabridge
     [Arguments]    ${username}    ${password}
     Login    ${username}    ${password}
-    ${status}    ${value}    run keyword and ignore error    page should contain element    ${CLOSE_BUTTON_LOCATOR}
-    run keyword if    '${status}' == 'PASS'    Skip message
+    ${status}    ${value}    Run Keyword And Ignore Error    page should contain element    ${OK_BUTTON_LOCATOR}
+    Run Keyword If    '${status}' == 'PASS'    Confirm Error Message
+
+Go To Projects Page
+    Click On Logo
 
 Check Location
     [Arguments]    ${expectedLocation}
@@ -24,6 +26,3 @@ Check Location
 
 Check Error Login Message Presence
     Page Should Contain Element    ${ERROR_CASE_ELEMENT}    The Login page doesn't contain error message element, but should be
-
-Check Main Page Contents Last Login Label
-    Page Should Contain Element    ${LAST_LOGIN_LABEL_LOCATOR}    The Main page doesn't contain last login label element, but should be
