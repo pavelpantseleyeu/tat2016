@@ -1,8 +1,8 @@
 *** Settings ***
-Library    GenerateWordsLibrary.py
+Library           ../libraries/GenerateWordsLibrary.py
 
 *** Keywords ***
 Random credential
-    [Arguments]  ${wordLength}
-    ${value}=    randomWord      ${wordLength}
-    [Return]     ${value}
+    [Arguments]    ${wordLength}
+    ${value}=    randomWord    ${wordLength}
+    [Return]    ${value}
