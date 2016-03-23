@@ -1,9 +1,0 @@
-psycopg2==2.6.1
-robotframework>=2.9.2
-https://github.com/joppa27/Robotframework-Database-Library/archive/master.zip
-robotframework-selenium2library>=1.7.4
-selenium>=2.48.0
-suds==0.4
-requests==2.7.0
-lxml==3.4.0
-tzlocal==1.2
