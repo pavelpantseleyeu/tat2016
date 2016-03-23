@@ -2,7 +2,7 @@
 Library    GenerateWordsLibrary.py
 
 *** Keywords ***
-Random credential
+Generate Random Credential
     [Arguments]  ${wordLength}
     ${value}=    randomWord      ${wordLength}
     [Return]     ${value}
