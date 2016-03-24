@@ -6,13 +6,13 @@ Library           Selenium2Library
 *** Variables ***
 
 *** Keywords ***
-Open browser in login
+Open Browser On Login Page
     Set Selenium Speed    ${SELENIUM_SPEED}
     Open Browser    ${LOGIN_URL}
     Maximize Browser Window
 
 Login
     [Arguments]    ${username}    ${password}
-    Input Text    ${LOGIN_INPUT_FIELD_LOCATOR}    ${username}
-    Input Text    ${PASSWORD_INPUT_FIELD_LOCATOR}    ${password}
+    Input Text    ${LOGIN_TEXT_INPUT_LOCATOR}    ${username}
+    Input Text    ${PASSWORD_TEXT_INPUT_LOCATOR}    ${password}
     Click Button    ${SUBMIT_BUTTON_LOCATOR}
