@@ -19,20 +19,20 @@ Valid Credentials Test
     [Teardown]    Sign Out
 
 Invalid Login Test
-    ${login}    Get Random String    ${CREDENTIAL_SIZE}
+    ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
     Login To Clarabridge    ${login}    ${USER_PASSWORD}
     Check Location    ${ERROR_URL}
     Check Error Login Message Presence
 
 Invalid Password Test
-    ${password}    Get Random String    ${CREDENTIAL_SIZE}
+    ${password}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
     Login To Clarabridge    ${USER_LOGIN}    ${password}
     Check Location    ${ERROR_URL}
     Check Error Login Message Presence
 
 Invalid Login And Password Test
-    ${login}    Get Random String    ${CREDENTIAL_SIZE}
-    ${password}    Get Random String    ${CREDENTIAL_SIZE}
+    ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
+    ${password}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
     Login To Clarabridge    ${login}    ${password}
     Check Location    ${ERROR_URL}
     Check Error Login Message Presence

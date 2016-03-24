@@ -9,7 +9,7 @@ ${CREDENTIAL_SIZE}    19
 
 *** Test Case ***
 Create New Project Test
-    ${projectName}    Get Random String    ${CREDENTIAL_SIZE}
+    ${projectName}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
     Open Browser On Login Page
     Login To Clarabridge    ${USER_LOGIN}    ${USER_PASSWORD}
     Go To Projects Page

@@ -1,9 +1,10 @@
 *** Settings ***
-Documentation  This util is used for generating random strings with letters, digits and special characters.
-Library    GenerateWordsLibrary.py
+Documentation     This util is used for generating random strings with letters, digits and special characters.
+Library           ../libraries/GenerateWordsLibrary.py
 
 *** Keywords ***
-Generate Random Credential
+Get Random String
     [Arguments]    ${wordLength}    #This argument used for setting length of random string
-    ${value}    get random string    ${wordLength}
-    [Return]     ${value}
+    ${wordLength}    Convert To Integer    ${wordLength}
+    ${value}    GenerateWordsLibrary.Get Random String    ${wordLength}
+    [Return]    ${value}
