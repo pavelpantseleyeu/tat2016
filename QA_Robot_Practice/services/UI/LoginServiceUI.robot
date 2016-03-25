@@ -1,6 +1,6 @@
 *** Settings ***
-Resource         ../../pages/LoginPage.robot
-Resource         ../../pages/MainPage.robot
+Resource    ../../pages/LoginPage.robot
+Resource    ../../pages/MainPage.robot
 
 *** Keywords ***
 Open Login Page
