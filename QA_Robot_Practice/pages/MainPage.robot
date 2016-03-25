@@ -1,8 +1,7 @@
 *** Settings ***
 Resource          res/MainPageLocators.robot
-Library           Selenium2Library
 Resource          ../globalConfig/GlobalSettings.robot
-Resource          ../utils/RandomWordsUtil.robot
+Library           Selenium2Library
 
 *** Keywords ***
 Confirm Error Message
