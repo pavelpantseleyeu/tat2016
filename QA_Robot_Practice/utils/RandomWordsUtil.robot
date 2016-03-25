@@ -1,6 +1,6 @@
 *** Settings ***
-Documentation     This util is used for generating random strings with letters, digits and special characters.
-Library           ../libraries/GenerateWordsLibrary.py
+Documentation    This util is used for generating random strings with letters, digits and special characters.
+Library    ../libraries/GenerateWordsLibrary.py
 
 *** Keywords ***
 Get Random String

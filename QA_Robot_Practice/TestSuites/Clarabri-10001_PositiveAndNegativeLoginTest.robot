@@ -5,10 +5,9 @@ Suite Teardown    Close Browser
 Resource          ../services/UI/LoginServiceUI.robot
 Resource          ../utils/RandomWordsUtil.robot
 Resource          ../globalConfig/GlobalSettings.robot
+Resource          TestResourses/Resourses.robot
 
 *** Variables ***
-${WELCOM_URL}     ${LOGIN_URL}/projects
-${ERROR_URL}      ${LOGIN_URL}/login?login_error=1
 ${CREDENTIAL_SIZE}    5
 
 *** Test Cases ***

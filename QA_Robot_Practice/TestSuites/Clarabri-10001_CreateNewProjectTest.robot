@@ -4,7 +4,6 @@ Resource          ../utils/RandomWordsUtil.robot
 Resource          ../globalConfig/GlobalSettings.robot
 
 *** Variables ***
-${WELCOM_URL}     ${LOGIN_URL}/projects
 ${CREDENTIAL_SIZE}    19
 
 *** Test Case ***
