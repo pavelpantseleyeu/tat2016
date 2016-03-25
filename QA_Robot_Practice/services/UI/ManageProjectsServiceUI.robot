@@ -15,8 +15,9 @@ Create New Project
     Input New Project's Name    ${projectName}
     Off Upload Data
     Click Create Button
+    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
 
 Check Project Creation
     [Arguments]    ${projectName}
-    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
-    Wait Until Element Is Visible    //.[contains(text(), '${projectName}')]    ${SELENIUM_DEFAULT_TIMEOUT}
+    Assign ID To Element   //.[contains(text(), '${projectName}')]    projectNameLocator
+    Page Should Contain Element    projectNameLocator
