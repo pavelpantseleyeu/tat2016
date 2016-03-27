@@ -19,5 +19,4 @@ Create New Project
 
 Check Project Creation
     [Arguments]    ${projectName}
-    Assign ID To Element   //.[contains(text(), '${projectName}')]    projectNameLocator
-    Page Should Contain Element    projectNameLocator
+    Page Should Contain Element   //.[contains(text(), '${projectName}')]

@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          ../utils/RandomWordsUtil.robot
-Resource          ../services/UI/ManageProjectsServiceUI.robot
+Resource          ../services/UI/ManageProjectServiceUI.robot
 
 *** Variables ***
 ${PROJECT_NAME_LENGTH}    19
