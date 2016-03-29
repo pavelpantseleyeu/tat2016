@@ -18,3 +18,14 @@ Create New Project
 Check Project Creation
     [Arguments]    ${projectName}
     Page Should Contain Element   //.[contains(text(), '${projectName}')]
+
+Delete Project
+    [Arguments]    ${projectName}
+    Click On Delete Project Link    ${projectName}
+    Click On Submit Delete Project Button
+
+Check Project Deletion
+    [Arguments]    ${projectName}
+    Awaiting Deleting Project    ${projectName}
+    Page Should Not Contain Element   //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
+

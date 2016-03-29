@@ -43,3 +43,16 @@ Off Upload Data
 
 Awaiting Finish Creating
     Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
+
+Awaiting Deleting Project
+    [Arguments]    ${projectName}
+    Wait Until Element Is Not Visible    ${SUBMIT_DELETE_BUTTON_LOCATOR}
+    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
+
+Click On Delete Project Link
+    [Arguments]    ${projectName}
+    Click Element    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
+
+Click On Submit Delete Project Button
+    Wait Until Element Is Enabled    ${SUBMIT_DELETE_BUTTON_LOCATOR}
+    Click Element    ${SUBMIT_DELETE_BUTTON_LOCATOR}

@@ -9,3 +9,4 @@ ${OK_BUTTON_LOCATOR}    //div[@class='gwt-DialogBox'][2]//div[@class='okButton n
 ${NEWPROJECT_CHECKBOX_LOCATOR}    gwt-uid-3
 ${CREATE_BUTTON_LOCATOR}    //button[text()='Create']
 ${ONLOAD_LOCATOR}    //*[contains(text(), 'Project is being created')]
+${SUBMIT_DELETE_BUTTON_LOCATOR}    //table[@class='alertDialog']//div[@class='okButton']

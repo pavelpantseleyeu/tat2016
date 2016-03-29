@@ -7,11 +7,12 @@ Resource          ../services/UI/LoginServiceUI.robot
 ${PROJECT_NAME_LENGTH}    19
 
 *** Test Case ***
-Create New Project Test
+Delete Project Test
     ${projectName}    RandomWordsUtil.Get Random String    ${PROJECT_NAME_LENGTH}
     [setup]    Run Keywords    Open Login Page
     ...    AND    Login To Clarabridge    ${USER_LOGIN}    ${USER_PASSWORD}
     ...    AND    Go To Projects Page
-    ...    AND    Create New Project    ${projectName}
-    Check Project Creation    ${projectName}
+    Create New Project    ${projectName}
+    Delete Project    ${projectName}
+    Check Project Deletion      ${projectName}
     [Teardown]    Close Browser
