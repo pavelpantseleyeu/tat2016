@@ -40,3 +40,6 @@ Click Create Button
 
 Off Upload Data
     Unselect Checkbox    ${NEWPROJECT_CHECKBOX_LOCATOR}
+
+Awaiting Finish Creating
+    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}

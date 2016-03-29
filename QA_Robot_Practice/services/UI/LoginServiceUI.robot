@@ -1,14 +1,9 @@
 *** Settings ***
 Resource         ../../pages/LoginPage.robot
-Resource         ../../pages/MainPage.robot
 
 *** Keywords ***
 Open Login Page
     Open Browser On Login Page
-
-Sign Out
-    Click On System Dropdown
-    Click Sign Out
 
 Login To Clarabridge
     [Arguments]    ${username}    ${password}

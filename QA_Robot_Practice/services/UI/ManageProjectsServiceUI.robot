@@ -1,12 +1,10 @@
 *** Settings ***
 Resource         ../../pages/MainPage.robot
-Resource         LoginServiceUI.robot
 
 *** Keywords ***
-Login And Open Projects Page
-    Open Login Page
-    Login To Clarabridge    ${USER_LOGIN}    ${USER_PASSWORD}
-    Go To Projects Page
+Sign Out
+    Click On System Dropdown
+    Click Sign Out
 
 Create New Project
     [Arguments]    ${projectName}
@@ -15,9 +13,8 @@ Create New Project
     Input New Project's Name    ${projectName}
     Off Upload Data
     Click Create Button
-    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
+    Awaiting Finish Creating
 
 Check Project Creation
     [Arguments]    ${projectName}
-    Assign ID To Element   //.[contains(text(), '${projectName}')]    projectNameLocator
-    Page Should Contain Element    projectNameLocator
+    Page Should Contain Element   //.[contains(text(), '${projectName}')]
