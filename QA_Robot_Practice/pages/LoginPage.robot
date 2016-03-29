@@ -3,8 +3,6 @@ Resource          res/LoginPageLocators.robot
 Resource          ../globalConfig/GlobalSettings.robot
 Library           Selenium2Library
 
-*** Variables ***
-
 *** Keywords ***
 Open Browser On Login Page
     Set Selenium Speed    ${SELENIUM_SPEED}

@@ -1,6 +1,7 @@
 *** Settings ***
-Resource         ../../pages/MainPage.robot
-Resource         LoginServiceUI.robot
+Resource          ../../pages/MainPage.robot
+Resource          LoginServiceUI.robot
+Resource          ../../utils/RandomWordsUtil.robot
 
 *** Keywords ***
 Login And Open Projects Page
@@ -19,4 +20,7 @@ Create New Project
 
 Check Project Creation
     [Arguments]    ${projectName}
-    Page Should Contain Element   //.[contains(text(), '${projectName}')]
+    Go To Projects Page
+    Page Should Contain Element    //.[text()='${projectName}']
+
+Delete Project
