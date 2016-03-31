@@ -4,7 +4,7 @@ Suite Setup       Open Login Page
 Suite Teardown    Close Browser
 Resource          ../services/UI/LoginServiceUI.robot
 Resource          ../utils/RandomWordsUtil.robot
-Resource          Resources/Resourses.robot
+Resource          Resources/Resources.robot
 
 *** Test Cases ***
 Valid Credentials Test

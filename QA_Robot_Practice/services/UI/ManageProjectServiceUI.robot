@@ -16,13 +16,13 @@ Create New Project
     Input New Project's Name    ${projectName}
     Off Upload Data
     Click Create Button
-    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
+    Waiting For Project Creation
 
 Check Project Creation
     [Arguments]    ${projectName}
     Page Should Contain Element    //.[text()='${projectName}']
 
-My Keyword
+Create Test Project
     [Arguments]    ${projectName}
     ${projectName}    RandomWordsUtil.Get Random String    ${PROJECT_NAME_LENGTH}
     Set Global Variable    ${projectName}
@@ -32,13 +32,9 @@ My Keyword
 
 Delete Project
     [Arguments]    ${projectName}
-    Go To Projects Page
     Wait Until Element Is Enabled    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]    ${DELETE_PROJECT_TIMEOUT}
     Click Element    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
-    Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${DELETE_PROJECT_TIMEOUT}
-    Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
-    Click Element    ${OK_DELETE_BUTTON_LOCATOR}
-    Wait Until Element Is Not Visible    //*[@class='dialogTopCenter']    ${DELETE_PROJECT_TIMEOUT}
+    Delete Project Notification
 
 Check Delete Project
     [Arguments]    ${projectName}

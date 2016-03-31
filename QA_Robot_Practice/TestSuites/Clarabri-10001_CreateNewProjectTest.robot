@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../utils/RandomWordsUtil.robot
 Resource          ../services/UI/ManageProjectServiceUI.robot
-Resource          Resources/Resourses.robot
+Resource          Resources/Resources.robot
 
 *** Test Case ***
 Create New Project Test

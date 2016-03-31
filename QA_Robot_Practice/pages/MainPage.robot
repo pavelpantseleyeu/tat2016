@@ -2,7 +2,7 @@
 Resource          res/MainPageLocators.robot
 Resource          ../globalConfig/GlobalSettings.robot
 Library           Selenium2Library
-Resource          ../TestSuites/Resources/Resourses.robot
+Resource          ../TestSuites/Resources/Resources.robot
 
 *** Keywords ***
 Confirm Error Message
@@ -41,3 +41,12 @@ Click Create Button
 
 Off Upload Data
     Unselect Checkbox    ${NEWPROJECT_CHECKBOX_LOCATOR}
+
+Delete Project Notification
+    Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${DELETE_PROJECT_TIMEOUT}
+    Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
+    Click Element    ${OK_DELETE_BUTTON_LOCATOR}
+    Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${DELETE_PROJECT_TIMEOUT}
+
+Waiting For Project Creation
+    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}

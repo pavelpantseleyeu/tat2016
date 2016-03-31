@@ -1,11 +1,11 @@
 *** Settings ***
 Resource          ../utils/RandomWordsUtil.robot
-Resource          Resources/Resourses.robot
+Resource          Resources/Resources.robot
 Resource          ../services/UI/ManageProjectServiceUI.robot
 
 *** Test Case ***
 Delete Project Test
-    [Setup]    My Keyword    Delete Project
+    [Setup]    Create Test Project    Delete Project
     Delete Project    ${projectName}
     Check Delete Project    ${projectName}
     [Teardown]    Close Browser
