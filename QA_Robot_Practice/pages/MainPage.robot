@@ -1,8 +1,8 @@
 *** Settings ***
 Resource          res/MainPageLocators.robot
-Library           Selenium2Library
 Resource          ../globalConfig/GlobalSettings.robot
-Resource          ../utils/RandomWordsUtil.robot
+Library           Selenium2Library
+Resource          ../TestSuites/Resources/Resourses.robot
 
 *** Keywords ***
 Confirm Error Message
@@ -21,7 +21,7 @@ Click On Logo
     Wait Until Element Is Visible    ${LOGO_LOCATOR}
     : FOR    ${try}    IN RANGE    0    3
     \    Click Element    ${LOGO_LOCATOR}
-    \    ${status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${CREATE_NEW_PROJECT_LOCATOR}
+    \    ${status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${CREATE_BUTTON_LOCATOR}
     \    Run Keyword If    ${status}    Exit For Loop
 
 Click On Create New Project Button
@@ -29,7 +29,7 @@ Click On Create New Project Button
     Click Button    ${CREATE_NEW_PROJECT_BUTTON_LOCATOR}
 
 Click On Project Name Field
-    Wait Until Element Is Visible    ${PROJECT_NAME_FIELD_LOCATOR}    ${SELENIUM_DEFAULT_TIMEOUT}
+    Wait Until Element Is Enabled    ${PROJECT_NAME_FIELD_LOCATOR}    ${SELENIUM_DEFAULT_TIMEOUT}
     Click Element    ${PROJECT_NAME_FIELD_LOCATOR}
 
 Input New Project's Name
@@ -41,8 +41,3 @@ Click Create Button
 
 Off Upload Data
     Unselect Checkbox    ${NEWPROJECT_CHECKBOX_LOCATOR}
-
-Find New Project
-    [Arguments]    ${projectName}
-    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
-    Wait Until Element Is Visible    //.[contains(text(), '${projectName}')]    ${SELENIUM_DEFAULT_TIMEOUT}
