@@ -10,3 +10,5 @@ ${NEWPROJECT_CHECKBOX_LOCATOR}    gwt-uid-3
 ${CREATE_BUTTON_LOCATOR}    //button[text()='Create']
 ${ONLOAD_LOCATOR}    //*[contains(text(), 'Project is being created')]
 ${DEFAULT_PROJECT_LOCATOR}    //.[text()='Default']
+${OK_DELETE_BUTTON_LOCATOR}    //*[@class='okButton']
+${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}    //*[@id='gwt-uid-3']

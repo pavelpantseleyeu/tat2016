@@ -21,7 +21,7 @@ Click On Logo
     Wait Until Element Is Visible    ${LOGO_LOCATOR}
     : FOR    ${try}    IN RANGE    0    3
     \    Click Element    ${LOGO_LOCATOR}
-    \    ${status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${DEFAULT_PROJECT_LOCATOR}
+    \    ${status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${CREATE_BUTTON_LOCATOR}
     \    Run Keyword If    ${status}    Exit For Loop
 
 Click On Create New Project Button
