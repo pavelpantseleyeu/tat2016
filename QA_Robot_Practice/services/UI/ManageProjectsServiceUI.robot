@@ -1,19 +1,29 @@
 *** Settings ***
 Resource         ../../pages/MainPage.robot
+Resource          ../../utils/RandomWordsUtil.robot
 
 *** Keywords ***
 Sign Out
     Click On System Dropdown
     Click Sign Out
 
+Go To Projects Page
+    Click On Logo
+
 Create New Project
     [Arguments]    ${projectName}
+    Click On Logo
     Click On Create New Project Button
     Click On Project Name Field
     Input New Project's Name    ${projectName}
     Off Upload Data
     Click Create Button
-    Awaiting Finish Creating
+    Awaiting Finish Creating    ${projectName}
+
+Create Test Project
+     ${projectName}    RandomWordsUtil.Get Random String    ${DEFAULT_PROJECT_NAME_LENGTH}
+     Set Global Variable    ${projectName}
+     Create New Project    ${projectName}
 
 Check Project Creation
     [Arguments]    ${projectName}
@@ -21,10 +31,6 @@ Check Project Creation
 
 Delete Project
     [Arguments]    ${projectName}
-    Click On Logo
-    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
-    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
-    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]    ${DELETE_PROJECT_TIMEOUT}
     Click On Delete Project Link    ${projectName}
     Delete Project Notification
 

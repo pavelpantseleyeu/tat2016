@@ -42,7 +42,11 @@ Off Upload Data
     Unselect Checkbox    ${NEWPROJECT_CHECKBOX_LOCATOR}
 
 Awaiting Finish Creating
+    [Arguments]    ${projectName}
     Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
+    Click On Logo
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
+    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
 
 Awaiting Deleting Project
     [Arguments]    ${projectName}
@@ -55,9 +59,9 @@ Delete Project Notification
      Click Element    ${OK_DELETE_BUTTON_LOCATOR}
      Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${DELETE_PROJECT_TIMEOUT}
 
-
 Click On Delete Project Link
     [Arguments]    ${projectName}
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]    ${DELETE_PROJECT_TIMEOUT}
     Click Element    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
 
 Click On Submit Delete Project Button
