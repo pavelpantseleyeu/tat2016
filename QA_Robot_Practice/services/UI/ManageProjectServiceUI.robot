@@ -1,6 +1,7 @@
 *** Settings ***
-Resource         ../../pages/MainPage.robot
-Resource         LoginServiceUI.robot
+Resource          ../../pages/MainPage.robot
+Resource          LoginServiceUI.robot
+Resource          ../../utils/RandomWordsUtil.robot
 
 *** Keywords ***
 Login And Open Projects Page
@@ -15,8 +16,29 @@ Create New Project
     Input New Project's Name    ${projectName}
     Off Upload Data
     Click Create Button
-    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
+    Waiting For Project Creation
 
 Check Project Creation
     [Arguments]    ${projectName}
-    Page Should Contain Element   //.[contains(text(), '${projectName}')]
+    Page Should Contain Element    //.[text()='${projectName}']
+
+Create Test Project
+    [Arguments]    ${projectName}
+    ${projectName}    RandomWordsUtil.Get Random String    ${PROJECT_NAME_LENGTH}
+    Set Global Variable    ${projectName}
+    Login And Open Projects Page
+    Create New Project    ${projectName}
+    Go To Projects Page
+
+Delete Project
+    [Arguments]    ${projectName}
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
+    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
+    Wait Until Element Is Enabled    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]    ${DELETE_PROJECT_TIMEOUT}
+    Click Element    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
+    Delete Project Notification
+
+Check Delete Project
+    [Arguments]    ${projectName}
+    Wait Until Page Does Not Contain Element    //.[text()='${projectName}']    ${DELETE_PROJECT_TIMEOUT}
+    Page Should Not Contain Element    //.[text()='${projectName}']
