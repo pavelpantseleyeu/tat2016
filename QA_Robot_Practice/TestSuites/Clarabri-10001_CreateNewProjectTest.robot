@@ -12,6 +12,6 @@ Create New Project Test
     [setup]    Run Keywords    Open Login Page
     ...    AND    Login To Clarabridge    ${USER_LOGIN}    ${USER_PASSWORD}
     ...    AND    Go To Projects Page
-    ...    AND    Create New Project    ${projectName}
+    Create New Project    ${projectName}
     Check Project Creation    ${projectName}
     [Teardown]    Close Browser

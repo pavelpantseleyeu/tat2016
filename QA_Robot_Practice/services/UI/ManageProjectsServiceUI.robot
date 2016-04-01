@@ -21,8 +21,12 @@ Check Project Creation
 
 Delete Project
     [Arguments]    ${projectName}
+    Click On Logo
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
+    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]    ${DELETE_PROJECT_TIMEOUT}
     Click On Delete Project Link    ${projectName}
-    Click On Submit Delete Project Button
+    Delete Project Notification
 
 Check Project Deletion
     [Arguments]    ${projectName}
