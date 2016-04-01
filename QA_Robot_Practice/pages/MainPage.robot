@@ -4,10 +4,6 @@ Resource          ../globalConfig/GlobalSettings.robot
 Library           Selenium2Library
 
 *** Keywords ***
-Confirm Error Message
-    Wait Until Element Is Visible    ${OK_BUTTON_LOCATOR}
-    Click Element    ${OK_BUTTON_LOCATOR}
-
 Click On System Dropdown
     Wait Until Element Is Visible    ${SYSTEM_DROPDOWN_LOCATOR}
     Click Element    ${SYSTEM_DROPDOWN_LOCATOR}
