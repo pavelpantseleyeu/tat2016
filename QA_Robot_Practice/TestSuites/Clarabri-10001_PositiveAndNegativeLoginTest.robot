@@ -3,7 +3,7 @@ Documentation     A test suite with positive and negative login tests.
 Suite Setup       Open Login Page
 Suite Teardown    Close Browser
 Resource          ../services/UI/LoginServiceUI.robot
-Resource          ../services/UI/ManageProjectsServiceUI.robot
+Resource          ../services/UI/ManageProjectServiceUI.robot
 Resource          ../utils/RandomWordsUtil.robot
 Resource          ../globalConfig/GlobalSettings.robot
 Resource          Resources/Resources.robot

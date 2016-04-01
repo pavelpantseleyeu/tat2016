@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          ../services/UI/ManageProjectsServiceUI.robot
+Resource          ../services/UI/ManageProjectServiceUI.robot
 Resource          ../services/UI/LoginServiceUI.robot
 
 *** Test Case ***
