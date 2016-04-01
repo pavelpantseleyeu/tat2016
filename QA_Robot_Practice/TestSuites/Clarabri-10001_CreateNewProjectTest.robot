@@ -1,7 +1,7 @@
 *** Settings ***
 Suite Teardown    Close Browser
 Resource          ../utils/RandomWordsUtil.robot
-Resource          ../services/UI/ManageProjectsServiceUI.robot
+Resource          ../services/UI/ManageProjectServiceUI.robot
 Resource          ../services/UI/LoginServiceUI.robot
 Resource          Resources/Resources.robot
 
