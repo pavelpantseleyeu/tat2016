@@ -16,7 +16,7 @@ Create New Project
     Click On Create New Project Button
     Click On Project Name Field
     Input New Project's Name    ${projectName}
-    Off Upload Data
+    Unselect Upload Data Checkbox
     Click Create Button
     Awaiting Finish Creating    ${projectName}
 

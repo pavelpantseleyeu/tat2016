@@ -4,10 +4,6 @@ Resource          ../globalConfig/GlobalSettings.robot
 Library           Selenium2Library
 
 *** Keywords ***
-Confirm Error Message
-    Wait Until Element Is Visible    ${OK_BUTTON_LOCATOR}
-    Click Element    ${OK_BUTTON_LOCATOR}
-
 Click On System Dropdown
     Wait Until Element Is Visible    ${SYSTEM_DROPDOWN_LOCATOR}
     Click Element    ${SYSTEM_DROPDOWN_LOCATOR}
@@ -38,8 +34,8 @@ Input New Project's Name
 Click Create Button
     Click Button    ${CREATE_BUTTON_LOCATOR}
 
-Off Upload Data
-    Unselect Checkbox    ${NEWPROJECT_CHECKBOX_LOCATOR}
+Unselect Upload Data Checkbox
+    Unselect Checkbox    ${NEW_PROJECT_UPLOAD_DATA_CHECKBOX_LOCATOR}
 
 Awaiting Finish Creating
     [Arguments]    ${projectName}
@@ -54,10 +50,10 @@ Awaiting Deleting Project
     Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
 
 Delete Project Notification
-     Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
-     Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
-     Click Element    ${OK_DELETE_BUTTON_LOCATOR}
-     Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
+    Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
+    Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
+    Click Element    ${OK_DELETE_BUTTON_LOCATOR}
+    Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
 
 Click On Delete Project Link
     [Arguments]    ${projectName}
