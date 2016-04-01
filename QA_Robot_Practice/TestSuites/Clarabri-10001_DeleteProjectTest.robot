@@ -1,11 +1,10 @@
 *** Settings ***
-Resource          ../utils/RandomWordsUtil.robot
-Resource          Resources/Resources.robot
-Resource          ../services/UI/ManageProjectServiceUI.robot
+Resource          ../services/UI/ManageProjectsServiceUI.robot
+Resource          ../services/UI/LoginServiceUI.robot
 
 *** Test Case ***
 Delete Project Test
-    [Setup]    Create Test Project    Delete Project
+    [setup]    Run Keywords    Login As Admin    Create Test Project
     Delete Project    ${projectName}
-    Check Delete Project    ${projectName}
+    Check Project Deletion      ${projectName}
     [Teardown]    Close Browser

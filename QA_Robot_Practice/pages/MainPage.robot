@@ -2,7 +2,6 @@
 Resource          res/MainPageLocators.robot
 Resource          ../globalConfig/GlobalSettings.robot
 Library           Selenium2Library
-Resource          ../TestSuites/Resources/Resources.robot
 
 *** Keywords ***
 Confirm Error Message
@@ -21,7 +20,7 @@ Click On Logo
     Wait Until Element Is Visible    ${LOGO_LOCATOR}
     : FOR    ${try}    IN RANGE    0    3
     \    Click Element    ${LOGO_LOCATOR}
-    \    ${status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${CREATE_BUTTON_LOCATOR}
+    \    ${status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${CREATE_NEW_PROJECT_LOCATOR}
     \    Run Keyword If    ${status}    Exit For Loop
 
 Click On Create New Project Button
@@ -42,11 +41,29 @@ Click Create Button
 Off Upload Data
     Unselect Checkbox    ${NEWPROJECT_CHECKBOX_LOCATOR}
 
-Delete Project Notification
-    Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${DELETE_PROJECT_TIMEOUT}
-    Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
-    Click Element    ${OK_DELETE_BUTTON_LOCATOR}
-    Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${DELETE_PROJECT_TIMEOUT}
+Awaiting Finish Creating
+    [Arguments]    ${projectName}
+    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
+    Click On Logo
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${PROJECT_PROCESSING_TIMEOUT}
+    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${PROJECT_PROCESSING_TIMEOUT}
 
-Waiting For Project Creation
-    Wait Until Element Is Not Visible    ${ONLOAD_LOCATOR}    ${CREATE_PROJECT_TIMEOUT}
+Awaiting Deleting Project
+    [Arguments]    ${projectName}
+    Wait Until Element Is Not Visible    ${SUBMIT_DELETE_BUTTON_LOCATOR}
+    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
+
+Delete Project Notification
+     Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
+     Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
+     Click Element    ${OK_DELETE_BUTTON_LOCATOR}
+     Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
+
+Click On Delete Project Link
+    [Arguments]    ${projectName}
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]    ${PROJECT_PROCESSING_TIMEOUT}
+    Click Element    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
+
+Click On Submit Delete Project Button
+    Wait Until Element Is Enabled    ${SUBMIT_DELETE_BUTTON_LOCATOR}
+    Click Element    ${SUBMIT_DELETE_BUTTON_LOCATOR}
