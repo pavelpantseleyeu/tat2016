@@ -2,6 +2,7 @@
 Resource          res/LoginPageLocators.robot
 Resource          ../globalConfig/GlobalSettings.robot
 Library           Selenium2Library
+Resource          res/MainPageLocators.robot
 
 *** Keywords ***
 Open Browser On Login Page

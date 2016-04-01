@@ -32,6 +32,8 @@ Create Test Project
 
 Delete Project
     [Arguments]    ${projectName}
+    Wait Until Element Is Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
+    Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'since')]    ${DELETE_PROJECT_TIMEOUT}
     Wait Until Element Is Enabled    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]    ${DELETE_PROJECT_TIMEOUT}
     Click Element    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
     Delete Project Notification
