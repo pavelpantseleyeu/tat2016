@@ -34,8 +34,8 @@ Input New Project's Name
 Click Create Button
     Click Button    ${CREATE_BUTTON_LOCATOR}
 
-Off Upload Data
-    Unselect Checkbox    ${NEWPROJECT_CHECKBOX_LOCATOR}
+Unselect Upload Data Checkbox
+    Unselect Checkbox    ${NEW_PROJECT_UPLOAD_DATA_CHECKBOX_LOCATOR}
 
 Awaiting Finish Creating
     [Arguments]    ${projectName}
