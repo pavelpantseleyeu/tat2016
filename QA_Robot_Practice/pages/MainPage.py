@@ -22,9 +22,18 @@ DELETE_TABLE_LOCATOR =  "//*[@class='dialogTopCenter']"
 #driver = webdriver.Firefox()
 driver = DriverUtil.get_driver()
 
+def click_on_system_dropdown():
+    driver.find_element_by_id(SYSTEM_DROPDOWN_LOCATOR).click()
+
+def click_sign_out():
+    driver.find_element_by_id(LOGOUT_LINK_LOCATOR).click()
+
 def click_on_logo():
     for x in range(0, 3):
         driver.find_element_by_xpath(LOGO_LOCATOR).click()
 
+def check_url(url):
+    actual_url=driver.current_url
+    assert actual_url in url
 
 

@@ -14,3 +14,5 @@ def login_as_admin():
     LoginPage.open_browser_on_login_page()
     LoginPage.login(GlobalSettings.USER_LOGIN, GlobalSettings.USER_PASSWORD)
 
+def check_error_message_presence():
+    LoginPage.check_error_message()
