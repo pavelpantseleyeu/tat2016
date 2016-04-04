@@ -11,8 +11,14 @@ Open Browser On Login Page
     Open Browser    ${LOGIN_URL}
     Maximize Browser Window
 
+Confirm Error Message
+    Wait Until Element Is Visible    ${OK_BUTTON_LOCATOR}
+    Click Element    ${OK_BUTTON_LOCATOR}
+
 Login
     [Arguments]    ${username}    ${password}
     Input Text    ${LOGIN_TEXT_INPUT_LOCATOR}    ${username}
     Input Text    ${PASSWORD_TEXT_INPUT_LOCATOR}    ${password}
     Click Button    ${SUBMIT_BUTTON_LOCATOR}
+    ${status}    ${value}    Run Keyword And Ignore Error    Page Should Contain Element    ${OK_BUTTON_LOCATOR}
+    Run Keyword If    '${status}' == 'PASS'    Confirm Error Message

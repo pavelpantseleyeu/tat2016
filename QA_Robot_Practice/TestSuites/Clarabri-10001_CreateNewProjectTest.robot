@@ -1,21 +1,14 @@
 *** Settings ***
-Resource          ../services/UI/LoginServiceUI.robot
+Suite Teardown    Close Browser
 Resource          ../utils/RandomWordsUtil.robot
-Resource          ../globalConfig/GlobalSettings.robot
-
-*** Variables ***
-${WELCOM_URL}     ${LOGIN_URL}/projects
-${CREDENTIAL_SIZE}    19
+Resource          ../services/UI/ManageProjectServiceUI.robot
+Resource          ../services/UI/LoginServiceUI.robot
+Resource          Resources/Resources.robot
 
 *** Test Case ***
 Create New Project Test
-    ${projectName}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    Open Browser On Login Page
-    Login To Clarabridge    ${USER_LOGIN}    ${USER_PASSWORD}
-    Go To Projects Page
-    Click On Create New Project Button
-    Click On Project Name Field
-    Input New Project's Name    ${projectName}
-    Off Upload Data
-    Click Create Button
-    Find New Project    ${projectName}
+    ${projectName}    RandomWordsUtil.Get Random String    ${PROJECT_NAME_LENGTH}
+    [setup]    Run Keywords    Login As Admin     Go To Projects Page
+    Create New Project    ${projectName}
+    Check Project Creation    ${projectName}
+    [Teardown]    Delete Project    ${projectName}
