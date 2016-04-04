@@ -20,3 +20,5 @@ Login
     Input Text    ${LOGIN_TEXT_INPUT_LOCATOR}    ${username}
     Input Text    ${PASSWORD_TEXT_INPUT_LOCATOR}    ${password}
     Click Button    ${SUBMIT_BUTTON_LOCATOR}
+    ${status}    ${value}    Run Keyword And Ignore Error    Page Should Contain Element    ${OK_BUTTON_LOCATOR}
+    Run Keyword If    '${status}' == 'PASS'    Confirm Error Message

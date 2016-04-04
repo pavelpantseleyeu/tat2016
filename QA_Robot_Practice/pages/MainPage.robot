@@ -50,10 +50,10 @@ Awaiting Deleting Project
     Wait Until Element Is Not Visible    //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
 
 Delete Project Notification
-     Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
-     Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
-     Click Element    ${OK_DELETE_BUTTON_LOCATOR}
-     Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
+    Wait Until Element Is Visible    ${OK_DELETE_BUTTON_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
+    Unselect Checkbox    ${RETAIN_SCHEMAS_CHECKBOX_LOCATOR}
+    Click Element    ${OK_DELETE_BUTTON_LOCATOR}
+    Wait Until Element Is Not Visible    ${DELETE_TABLE_LOCATOR}    ${PROJECT_PROCESSING_TIMEOUT}
 
 Click On Delete Project Link
     [Arguments]    ${projectName}
@@ -63,3 +63,12 @@ Click On Delete Project Link
 Click On Submit Delete Project Button
     Wait Until Element Is Enabled    ${SUBMIT_DELETE_BUTTON_LOCATOR}
     Click Element    ${SUBMIT_DELETE_BUTTON_LOCATOR}
+
+Check Project Creation
+    [Arguments]    ${projectName}
+    Page Should Contain Element   //.[contains(text(), '${projectName}')]
+
+Check Project Deletion
+    [Arguments]    ${projectName}
+    Awaiting Deleting Project    ${projectName}
+    Page Should Not Contain Element   //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]

@@ -19,22 +19,15 @@ Create New Project
     Unselect Upload Data Checkbox
     Click Create Button
     Awaiting Finish Creating    ${projectName}
+    Check Project Creation    ${projectName}
 
 Create Test Project
-     ${projectName}    RandomWordsUtil.Get Random String    ${DEFAULT_PROJECT_NAME_LENGTH}
-     Set Global Variable    ${projectName}
-     Create New Project    ${projectName}
-
-Check Project Creation
-    [Arguments]    ${projectName}
-    Page Should Contain Element   //.[contains(text(), '${projectName}')]
+    ${projectName}    RandomWordsUtil.Get Random String    ${DEFAULT_PROJECT_NAME_LENGTH}
+    Set Global Variable    ${projectName}
+    Create New Project    ${projectName}
 
 Delete Project
     [Arguments]    ${projectName}
     Click On Delete Project Link    ${projectName}
     Delete Project Notification
-
-Check Project Deletion
-    [Arguments]    ${projectName}
-    Awaiting Deleting Project    ${projectName}
-    Page Should Not Contain Element   //a[contains(text(), '${projectName}')]//..//..//.[contains(text(), 'Delete project')]
+    Check Project Deletion    ${projectName}

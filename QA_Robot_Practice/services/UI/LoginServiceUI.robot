@@ -9,8 +9,6 @@ Open Login Page
 Login To Clarabridge
     [Arguments]    ${username}    ${password}
     Login    ${username}    ${password}
-    ${status}    ${value}    Run Keyword And Ignore Error    Page Should Contain Element    ${OK_BUTTON_LOCATOR}
-    Run Keyword If    '${status}' == 'PASS'    Confirm Error Message
 
 Check Location
     [Arguments]    ${expectedLocation}
