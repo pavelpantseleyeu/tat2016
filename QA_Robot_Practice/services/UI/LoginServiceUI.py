@@ -1,8 +1,5 @@
-import sys
-sys.path.append("../pages")
-sys.path.append("../globalConfig")
-import GlobalSettings
-import LoginPage
+from pages import LoginPage
+from globalConfig.GlobalSettings import GlobalSettings
 
 def open_login_page():
     LoginPage.open_browser_on_login_page()

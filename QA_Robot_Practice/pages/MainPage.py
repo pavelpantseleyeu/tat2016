@@ -1,7 +1,4 @@
-import sys
-sys.path.append("../globalConfig")
-sys.path.append("../utils")
-import DriverUtil
+from ui.Browser import Browser
 
 SYSTEM_DROPDOWN_LOCATOR = "GButtonUserMenu"
 LOGOUT_LINK_LOCATOR = "GBLgf"
@@ -17,18 +14,16 @@ OK_DELETE_BUTTON_LOCATOR = "//*[@class='okButton']"
 RETAIN_SCHEMAS_CHECKBOX_LOCATOR = "//*[@id='gwt-uid-3']"
 DELETE_TABLE_LOCATOR =  "//*[@class='dialogTopCenter']"
 
-driver = DriverUtil.get_driver()
-
 def click_on_system_dropdown():
-    driver.find_element_by_id(SYSTEM_DROPDOWN_LOCATOR).click()
+    Browser.click(SYSTEM_DROPDOWN_LOCATOR)
 
 def click_sign_out():
-    driver.find_element_by_id(LOGOUT_LINK_LOCATOR).click()
+    Browser.click(LOGOUT_LINK_LOCATOR)
 
 def click_on_logo():
     for x in range(0, 3):
-        driver.find_element_by_xpath(LOGO_LOCATOR).click()
+        Browser.click(LOGO_LOCATOR)
 
 def check_url(url):
-    actual_url=driver.current_url
+    actual_url = Browser.get_current_url()
     assert actual_url in url
