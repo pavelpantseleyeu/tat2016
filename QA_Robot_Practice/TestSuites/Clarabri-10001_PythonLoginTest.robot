@@ -9,8 +9,8 @@ Library           ../services/UI/ManageProjectServiceUI.py
 Valid Credentials Test
     Login As Admin
     Go To Projects Page
-    Check Location     ${WELCOM_URL}
-    [Teardown]     Sign Out
+    Check Location    ${WELCOM_URL}
+    [Teardown]    Sign Out
 
 Invalid Login Test
     ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}

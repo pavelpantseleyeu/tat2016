@@ -1,5 +1,5 @@
-from pages import LoginPage
 from globalConfig.GlobalSettings import GlobalSettings
+from pages import LoginPage
 
 def open_login_page():
     LoginPage.open_browser_on_login_page()

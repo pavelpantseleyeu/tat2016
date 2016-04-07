@@ -1,8 +1,8 @@
-from GlobalSettings import GlobalSettings
-from ui.Browser import Browser
+from ui.Browser import *
+from globalConfig.GlobalSettings import GlobalSettings
 
-LOGIN_TEXT_INPUT_LOCATOR = "j_username"
-PASSWORD_TEXT_INPUT_LOCATOR = "j_password"
+LOGIN_TEXT_INPUT_LOCATOR = "//*[@id='j_username']"
+PASSWORD_TEXT_INPUT_LOCATOR = "//*[@name='j_password']"
 SUBMIT_BUTTON_LOCATOR = "//button[@type='submit']"
 LOGO_LOCATOR = "//img[@src='images/logo.gif']"
 ERROR_CASE_ELEMENT = "//font[@color='red']"

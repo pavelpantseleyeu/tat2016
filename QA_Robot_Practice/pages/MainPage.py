@@ -1,7 +1,7 @@
 from ui.Browser import Browser
 
-SYSTEM_DROPDOWN_LOCATOR = "GButtonUserMenu"
-LOGOUT_LINK_LOCATOR = "GBLgf"
+SYSTEM_DROPDOWN_LOCATOR = "//*[@id='GButtonUserMenu']"
+LOGOUT_LINK_LOCATOR = "//*[@id='GBLgf']"
 LAST_LOGIN_LABEL_LOCATOR = "GTlastLoginLabel"
 LOGO_LOCATOR = "//img[@src='images/logo.gif']"
 CREATE_NEW_PROJECT_BUTTON_LOCATOR = "//button[contains(text(), 'Create New Project')]"

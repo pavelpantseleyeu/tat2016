@@ -1,7 +1,4 @@
-import sys
-sys.path.append("../pages")
-sys.path.append("../globalConfig")
-import MainPage
+from pages import MainPage
 
 def go_to_projects_page():
     MainPage.click_on_logo()
