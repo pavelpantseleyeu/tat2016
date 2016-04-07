@@ -1,21 +1,35 @@
+from ui.Browser import *
 from globalConfig.GlobalSettings import GlobalSettings
-from ui.Browser import Browser
 
-LOGIN_TEXT_INPUT_LOCATOR = "//input[@id='j_username']"
-PASSWORD_TEXT_INPUT_LOCATOR = "//input[@id='j_password']"
+
+LOGIN_TEXT_INPUT_LOCATOR = "//*[@id='j_username']"
+PASSWORD_TEXT_INPUT_LOCATOR = "//*[@name='j_password']"
 SUBMIT_BUTTON_LOCATOR = "//button[@type='submit']"
+LOGO_LOCATOR = "//img[@src='images/logo.gif']"
 ERROR_CASE_ELEMENT = "//font[@color='red']"
+OK_BUTTON_LOCATOR = "//div[@class='gwt-DialogBox'][3]//div[@class='okButton nowrap']"
+ERROR_COLOR_ATTRIBUTE = "color"
+ERROR_TEXT_COLOR = "red"
 
 
-def open_login_page():
+def open_browser_on_login_page():
     Browser.open(GlobalSettings.LOGIN_URL)
 
 
-def login_in(user):
-    Browser.type(LOGIN_TEXT_INPUT_LOCATOR, user.login)
-    Browser.type(PASSWORD_TEXT_INPUT_LOCATOR, user.password)
-    Browser.submit(SUBMIT_BUTTON_LOCATOR)
+def confirm_error_message():
+    Browser.click(OK_BUTTON_LOCATOR)
 
 
-def is_login_error_message_present():
-    return Browser.is_present(ERROR_CASE_ELEMENT)
+def login(user_name, password):
+    Browser.type(LOGIN_TEXT_INPUT_LOCATOR, user_name)
+    Browser.type(PASSWORD_TEXT_INPUT_LOCATOR, password)
+    Browser.click(SUBMIT_BUTTON_LOCATOR)
+    try:
+        confirm_error_message()
+    except:
+        pass
+
+
+def check_error_message():
+    color = Browser.get_attribute_value_from_element(ERROR_CASE_ELEMENT, ERROR_COLOR_ATTRIBUTE)
+    assert color in ERROR_TEXT_COLOR

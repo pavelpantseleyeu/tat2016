@@ -13,10 +13,10 @@ ONLOAD_LOCATOR = "//*[contains(text(), 'Project is being created')]"
 SUBMIT_DELETE_BUTTON_LOCATOR = "//table[@class='alertDialog']//div[@class='okButton']"
 OK_DELETE_BUTTON_LOCATOR = "//*[@class='okButton']"
 RETAIN_SCHEMAS_CHECKBOX_LOCATOR = "//*[@id='gwt-uid-3']"
-DELETE_TABLE_LOCATOR = "//*[@class='dialogTopCenter']"
+DELETE_TABLE_LOCATOR =  "//*[@class='dialogTopCenter']"
 
 
-def open_system_dropdown():
+def click_on_system_dropdown():
     Browser.click(SYSTEM_DROPDOWN_LOCATOR)
 
 
@@ -24,13 +24,11 @@ def click_sign_out():
     Browser.click(LOGOUT_LINK_LOCATOR)
 
 
-def click_create_new_project():
-    Browser.click(CREATE_NEW_PROJECT_BUTTON_LOCATOR)
+def click_on_logo():
+    for x in range(0, 3):
+        Browser.click(LOGO_LOCATOR)
 
 
-def click_create_project():
-    Browser.click(CREATE_BUTTON_LOCATOR)
-
-
-def click_submit_delete_project_button():
-    Browser.click(SUBMIT_DELETE_BUTTON_LOCATOR)
+def check_url(url):
+    actual_url = Browser.get_current_url()
+    assert actual_url in url

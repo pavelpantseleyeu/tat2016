@@ -4,8 +4,8 @@ from globalConfig.GlobalSettings import GlobalSettings
 
 class Browser(object):
     driver = webdriver.Firefox()
-    driver.implicitly_wait(GlobalSettings.IMPLICITLY_WAIT)
-    driver.set_page_load_timeout(GlobalSettings.SELENIUM_DEFAULT_TIMEOUT)
+    driver.implicitly_wait(GlobalSettings.IMPLYCITLY_WAIT)
+    driver.set_page_load_timeout(GlobalSettings.PAGE_LOAD_TIMEOUT)
 
 
     @classmethod
@@ -16,7 +16,6 @@ class Browser(object):
     @classmethod
     def close_browser(cls):
         cls.driver.close()
-
 
     @classmethod
     def click(cls, locator):
@@ -40,8 +39,18 @@ class Browser(object):
     def is_present(cls, locator):
         return cls.driver.find_elements_by_xpath(locator).size() > 0
 
+    @classmethod
+    def get_current_url(cls):
+        return cls.driver.current_url
+
 
     @classmethod
-    def get_test_from_element(cls, locator):
+    def get_text_from_element(cls, locator):
         text = cls.driver.find_element_by_xpath(locator).text
         return text
+
+
+    @classmethod
+    def get_attribute_value_from_element(cls, locator, attribute):
+        attribute_value = cls.driver.find_element_by_xpath(locator).get_attribute(attribute)
+        return attribute_value

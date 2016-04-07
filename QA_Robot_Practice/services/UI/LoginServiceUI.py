@@ -1,21 +1,18 @@
-from bo.Users import UserBuilder
 from pages import LoginPage
+from globalConfig.GlobalSettings import GlobalSettings
+
+def open_login_page():
+    LoginPage.open_browser_on_login_page()
 
 
-def login():
-    LoginPage.open_login_page()
-    LoginPage.login_in(UserBuilder.get_default_user())
+def login_to_clarabridge(user_name, password):
+    LoginPage.login(user_name, password)
 
 
-def login_with_incorrect_password():
-    LoginPage.open_login_page()
-    LoginPage.login_in(UserBuilder.get_default_user(password='incorrect_password'))
+def login_as_admin():
+    LoginPage.open_browser_on_login_page()
+    LoginPage.login(GlobalSettings.USER_LOGIN, GlobalSettings.USER_PASSWORD)
 
 
-def login_with_incorrect_login():
-    LoginPage.open_login_page()
-    LoginPage.login_in(UserBuilder.get_default_user(login='incorrect_login'))
-
-
-def check_is_login_error_message_present():
-    assert True == LoginPage.is_login_error_message_present(), 'Login Error message is not presented'
+def check_error_message_presence():
+    LoginPage.check_error_message()
