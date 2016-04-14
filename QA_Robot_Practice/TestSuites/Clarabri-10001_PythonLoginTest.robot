@@ -17,12 +17,14 @@ Invalid Login Test
     Login To Clarabridge    ${login}    ${USER_PASSWORD}
     Check Location    ${ERROR_URL}
     Check Error Message Presence
+    [Teardown]    Close Browser
 
 Invalid Password Test
     ${password}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
     Login To Clarabridge    ${USER_LOGIN}    ${password}
     Check Location    ${ERROR_URL}
     Check Error Message Presence
+    [Teardown]    Close Browser
 
 Invalid Login And Password Test
     ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
@@ -30,3 +32,4 @@ Invalid Login And Password Test
     Login To Clarabridge    ${login}    ${password}
     Check Location    ${ERROR_URL}
     Check Error Message Presence
+    [Teardown]    Close Browser

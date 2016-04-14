@@ -6,6 +6,7 @@ def open_login_page():
 
 
 def login_to_clarabridge(user_name, password):
+    LoginPage.open_browser_on_login_page()
     LoginPage.login(user_name, password)
 
 
