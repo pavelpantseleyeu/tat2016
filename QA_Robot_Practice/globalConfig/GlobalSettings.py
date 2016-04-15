@@ -1,10 +1,11 @@
 
-class GlobalSettings():
+class GlobalSettings(object):
 
-    PROTOCOL = "http:"
+    PROTOCOL = "http://"
     SERVER = "ecsd001004eb.epam.com:"
     PORT = "18080"
     LOGIN_URL = PROTOCOL + SERVER + PORT + "/cmp"
+    WELCOM_URL = LOGIN_URL + "/projects"
     SELENIUM_SPEED = 0
     BROWSER = "firefox"
     USER_LOGIN = "admin"

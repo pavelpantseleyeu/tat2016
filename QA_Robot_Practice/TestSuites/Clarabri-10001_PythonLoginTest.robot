@@ -1,32 +1,38 @@
 *** Settings ***
-Resource          Resources/Resources.robot
-Resource          ../utils/RandomWordsUtil.robot
-Resource          ../globalConfig/GlobalSettings.robot
 Library           ../services/UI/LoginServiceUI.py
+Library           ../libraries/GenerateWordsLibrary.py
 Library           ../services/UI/ManageProjectServiceUI.py
+Library           ../globalConfig/GlobalSettings.py
+Library           Resources/Resources.py
 
 *** Test Cases ***
 Valid Credentials Test
+    ${globalSettings}    Get Library Instance    GlobalSettings
     Login As Admin
     Go To Projects Page
-    Check Location    ${WELCOM_URL}
+    Check Location    ${GlobalSettings.WELCOM_URL}
     [Teardown]    Sign Out
 
 Invalid Login Test
-    ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    Login To Clarabridge    ${login}    ${USER_PASSWORD}
-    Check Location    ${ERROR_URL}
+    ${globalSettings}    Get Library Instance    GlobalSettings
+    ${resources}    Get Library Instance    Resources
+    ${login}    Get Random String    ${Resources.CREDENTIAL_SIZE}
+    Login To Clarabridge    ${login}    ${GlobalSettings.USER_PASSWORD}
+    Check Location    ${Resources.ERROR_URL}
     Check Error Message Presence
 
 Invalid Password Test
-    ${password}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    Login To Clarabridge    ${USER_LOGIN}    ${password}
-    Check Location    ${ERROR_URL}
+    ${globalSettings}    Get Library Instance    GlobalSettings
+    ${resources}    Get Library Instance    Resources
+    ${password}   Get Random String    ${Resources.CREDENTIAL_SIZE}
+    Login To Clarabridge    ${GlobalSettings.USER_LOGIN}    ${password}
+    Check Location    ${Resources.ERROR_URL}
     Check Error Message Presence
 
 Invalid Login And Password Test
-    ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    ${password}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
+    ${resources}    Get Library Instance    Resources
+    ${login}    Get Random String    ${Resources.CREDENTIAL_SIZE}
+    ${password}    Get Random String    ${Resources.CREDENTIAL_SIZE}
     Login To Clarabridge    ${login}    ${password}
-    Check Location    ${ERROR_URL}
+    Check Location    ${Resources.ERROR_URL}
     Check Error Message Presence
