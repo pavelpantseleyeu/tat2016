@@ -4,11 +4,11 @@ from pages import LoginPage
 def open_login_page():
     LoginPage.open_browser_on_login_page()
 
-def login_to_clarabridge(user_name, password):
+def login_to_clarabridge(user_name=GlobalSettings.USER_LOGIN, password=GlobalSettings.USER_PASSWORD):
     LoginPage.login(user_name, password)
 
 def login_as_admin():
-    LoginPage.open_browser_on_login_page()
+    open_login_page()
     LoginPage.login(GlobalSettings.USER_LOGIN, GlobalSettings.USER_PASSWORD)
 
 def check_error_message_presence():

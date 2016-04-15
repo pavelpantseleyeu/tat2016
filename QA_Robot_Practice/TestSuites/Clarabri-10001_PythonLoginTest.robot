@@ -18,7 +18,7 @@ Invalid Login Test
     ${resources}    Get Library Instance    Resources
     ${login}    Get Random String    ${Resources.CREDENTIAL_SIZE}
     Login To Clarabridge    ${login}    ${GlobalSettings.USER_PASSWORD}
-    Check Location    ${Resources.ERROR_URL}
+    Check Location    ${GlobalSettings.ERROR_URL}
     Check Error Message Presence
 
 Invalid Password Test
@@ -26,13 +26,14 @@ Invalid Password Test
     ${resources}    Get Library Instance    Resources
     ${password}   Get Random String    ${Resources.CREDENTIAL_SIZE}
     Login To Clarabridge    ${GlobalSettings.USER_LOGIN}    ${password}
-    Check Location    ${Resources.ERROR_URL}
+    Check Location    ${GlobalSettings.ERROR_URL}
     Check Error Message Presence
 
 Invalid Login And Password Test
+    ${globalSettings}    Get Library Instance    GlobalSettings
     ${resources}    Get Library Instance    Resources
     ${login}    Get Random String    ${Resources.CREDENTIAL_SIZE}
     ${password}    Get Random String    ${Resources.CREDENTIAL_SIZE}
     Login To Clarabridge    ${login}    ${password}
-    Check Location    ${Resources.ERROR_URL}
+    Check Location    ${GlobalSettings.ERROR_URL}
     Check Error Message Presence

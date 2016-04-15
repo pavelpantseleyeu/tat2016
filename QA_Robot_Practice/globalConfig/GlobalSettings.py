@@ -6,6 +6,7 @@ class GlobalSettings(object):
     PORT = "18080"
     LOGIN_URL = PROTOCOL + SERVER + PORT + "/cmp"
     WELCOM_URL = LOGIN_URL + "/projects"
+    ERROR_URL = LOGIN_URL + "/login?login_error=1"
     SELENIUM_SPEED = 0
     BROWSER = "firefox"
     USER_LOGIN = "admin"
