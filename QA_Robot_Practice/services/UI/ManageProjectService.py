@@ -7,6 +7,3 @@ def go_to_projects_page():
 def sign_out():
     NavigatorPage.click_on_system_dropdown()
     NavigatorPage.click_sign_out()
-
-def check_location(url):
-    MainPage.check_url(url)
