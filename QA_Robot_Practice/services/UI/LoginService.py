@@ -1,12 +1,12 @@
 from pages import LoginPage
 from globalConfig.GlobalSettings import GlobalSettings
+from pages import NavigatorPage
 
 def open_login_page():
     LoginPage.open_browser_on_login_page()
 
 
-def login_to_clarabridge(user_name, password):
-    LoginPage.open_browser_on_login_page()
+def login_to_clarabridge(user_name=GlobalSettings.USER_LOGIN, password=GlobalSettings.USER_PASSWORD):
     LoginPage.login(user_name, password)
 
 
@@ -17,3 +17,7 @@ def login_as_admin():
 
 def check_error_message_presence():
     LoginPage.check_error_message()
+
+
+def check_location(url):
+    NavigatorPage.check_url(url)

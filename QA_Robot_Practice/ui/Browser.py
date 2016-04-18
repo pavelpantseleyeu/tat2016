@@ -17,6 +17,7 @@ class Browser(object):
     def close_browser(cls):
         cls.driver.close()
 
+
     @classmethod
     def click(cls, locator):
         elem = cls.driver.find_element_by_xpath(locator)
