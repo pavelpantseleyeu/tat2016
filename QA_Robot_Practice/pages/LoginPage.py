@@ -12,8 +12,8 @@ ERROR_COLOR_ATTRIBUTE = "color"
 ERROR_TEXT_COLOR = "red"
 driver = BasePage.driver
 
-def open_browser_on_login_page():
-    sel.open_browser(driver, GlobalSettings.LOGIN_URL)
+def open_browser_on_login_page(url):
+    sel.open_browser(driver, url)
     sel.maximize_browser_window(driver)
 
 def confirm_error_message():

@@ -1,14 +1,14 @@
 *** Settings ***
 Library           ../services/UI/LoginService.py
 Library           ../libraries/GenerateWordsLibrary.py
-Library           ../services/UI/ManageProjectService.py
+Library           ../services/UI/NavigateService.py
 Library           ../globalConfig/GlobalSettings.py
 Library           Resources/Resources.py
 
 *** Test Cases ***
 Valid Credentials Test
     ${globalSettings}    Get Library Instance    GlobalSettings
-    Login As Admin
+    Login As Admin    ${GlobalSettings.LOGIN_URL}
     Go To Projects Page
     Check Location    ${GlobalSettings.WELCOM_URL}
     [Teardown]    Sign Out
