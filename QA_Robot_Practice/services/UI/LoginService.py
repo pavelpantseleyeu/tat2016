@@ -1,4 +1,4 @@
-from globalConfig.GlobalSettings import GlobalSettings
+from globalConfig import GlobalSettings
 from pages import LoginPage
 
 def open_login_page(url):

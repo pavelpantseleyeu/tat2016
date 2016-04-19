@@ -1,4 +1,4 @@
-from globalConfig.GlobalSettings import GlobalSettings
+from globalConfig import GlobalSettings
 from Selenium2Library import Selenium2Library as sel
 
 driver = sel()
