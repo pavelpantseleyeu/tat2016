@@ -8,7 +8,8 @@ Library           Resources/Resources.py
 *** Test Cases ***
 Valid Credentials Test
     ${globalSettings}    Get Library Instance    GlobalSettings
-    Login As Admin    ${GlobalSettings.LOGIN_URL}
+    Open Login Page    ${GlobalSettings.LOGIN_URL}
+    Login To Clarabridge
     Go To Projects Page
     Check Location    ${GlobalSettings.WELCOM_URL}
     [Teardown]    Sign Out

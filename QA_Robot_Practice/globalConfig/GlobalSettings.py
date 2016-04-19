@@ -12,5 +12,5 @@ class GlobalSettings(object):
     USER_LOGIN = "admin"
     USER_PASSWORD = "admin"
     PAGE_LOAD_TIMEOUT = 30
-    IMPLYCITLY_WAIT = 10
+    IMPLYCITLY_WAIT = 30
     PROJECT_PROCESSING_TIMEOUT = 500
