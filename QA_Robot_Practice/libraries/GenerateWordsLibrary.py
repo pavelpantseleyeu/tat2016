@@ -1,7 +1,5 @@
-import random
+﻿import random
 import string
 
-
-def get_random_string(wordLength=3):
-    chars = string.letters + string.digits
-    return ''.join((random.choice(chars)) for x in range(wordLength))
+def get_random_string(word_length):
+   return ''.join((random.choice(string.letters + string.digits)) for x in range(int(word_length)))
