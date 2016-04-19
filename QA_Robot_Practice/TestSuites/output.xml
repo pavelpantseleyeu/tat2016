@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160407 18:07:08.115" generator="Robot 3.0 (Python 2.7.10 on win32)">
+<suite source="d:\python_aducation\tat2016\QA_Robot_Practice\TestSuites\Clarabri-10001_PhythonLoginTest.robot" id="s1" name="Clarabri-10001 PhythonLoginTest">
+<test id="s1-t1" name="Valid Credentials Test">
+<kw name="Login As Admin">
+<msg timestamp="20160407 18:07:08.215" level="FAIL">No keyword with name 'Login As Admin' found.</msg>
+<status status="FAIL" endtime="20160407 18:07:08.215" starttime="20160407 18:07:08.215"></status>
+</kw>
+<kw type="teardown" name="Sign Out">
+<msg timestamp="20160407 18:07:08.215" level="FAIL">No keyword with name 'Sign Out' found.</msg>
+<status status="FAIL" endtime="20160407 18:07:08.215" starttime="20160407 18:07:08.215">No keyword with name 'Sign Out' found.</status>
+</kw>
+<status status="FAIL" endtime="20160407 18:07:08.215" critical="yes" starttime="20160407 18:07:08.200">No keyword with name 'Login As Admin' found.
+
+Also teardown failed:
+No keyword with name 'Sign Out' found.</status>
+</test>
+<test id="s1-t2" name="Invalid Login Test">
+<kw name="Get Random String" library="RandomWordsUtil">
+<arguments>
+<arg>${CREDENTIAL_SIZE}</arg>
+</arguments>
+<assign>
+<var>${login}</var>
+</assign>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${wordLength}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.231" level="INFO">${wordLength} = 5</msg>
+<status status="PASS" endtime="20160407 18:07:08.231" starttime="20160407 18:07:08.231"></status>
+</kw>
+<kw name="Get Random String" library="GenerateWordsLibrary">
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.231" level="INFO">${value} = IprRC</msg>
+<status status="PASS" endtime="20160407 18:07:08.231" starttime="20160407 18:07:08.231"></status>
+</kw>
+<msg timestamp="20160407 18:07:08.231" level="INFO">${login} = IprRC</msg>
+<status status="PASS" endtime="20160407 18:07:08.231" starttime="20160407 18:07:08.231"></status>
+</kw>
+<kw name="Login To Clarabridge">
+<arguments>
+<arg>${login}</arg>
+<arg>${USER_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160407 18:07:08.231" level="FAIL">No keyword with name 'Login To Clarabridge' found.</msg>
+<status status="FAIL" endtime="20160407 18:07:08.231" starttime="20160407 18:07:08.231"></status>
+</kw>
+<status status="FAIL" endtime="20160407 18:07:08.231" critical="yes" starttime="20160407 18:07:08.215">No keyword with name 'Login To Clarabridge' found.</status>
+</test>
+<test id="s1-t3" name="Invalid Password Test">
+<kw name="Get Random String" library="RandomWordsUtil">
+<arguments>
+<arg>${CREDENTIAL_SIZE}</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${wordLength}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.247" level="INFO">${wordLength} = 5</msg>
+<status status="PASS" endtime="20160407 18:07:08.247" starttime="20160407 18:07:08.247"></status>
+</kw>
+<kw name="Get Random String" library="GenerateWordsLibrary">
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.247" level="INFO">${value} = Glh8T</msg>
+<status status="PASS" endtime="20160407 18:07:08.247" starttime="20160407 18:07:08.247"></status>
+</kw>
+<msg timestamp="20160407 18:07:08.247" level="INFO">${password} = Glh8T</msg>
+<status status="PASS" endtime="20160407 18:07:08.247" starttime="20160407 18:07:08.247"></status>
+</kw>
+<kw name="Login To Clarabridge">
+<arguments>
+<arg>${USER_LOGIN}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160407 18:07:08.247" level="FAIL">No keyword with name 'Login To Clarabridge' found.</msg>
+<status status="FAIL" endtime="20160407 18:07:08.247" starttime="20160407 18:07:08.247"></status>
+</kw>
+<status status="FAIL" endtime="20160407 18:07:08.247" critical="yes" starttime="20160407 18:07:08.231">No keyword with name 'Login To Clarabridge' found.</status>
+</test>
+<test id="s1-t4" name="Invalid Login And Password Test">
+<kw name="Get Random String" library="RandomWordsUtil">
+<arguments>
+<arg>${CREDENTIAL_SIZE}</arg>
+</arguments>
+<assign>
+<var>${login}</var>
+</assign>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${wordLength}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.262" level="INFO">${wordLength} = 5</msg>
+<status status="PASS" endtime="20160407 18:07:08.262" starttime="20160407 18:07:08.262"></status>
+</kw>
+<kw name="Get Random String" library="GenerateWordsLibrary">
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.262" level="INFO">${value} = 0VsgP</msg>
+<status status="PASS" endtime="20160407 18:07:08.262" starttime="20160407 18:07:08.262"></status>
+</kw>
+<msg timestamp="20160407 18:07:08.262" level="INFO">${login} = 0VsgP</msg>
+<status status="PASS" endtime="20160407 18:07:08.262" starttime="20160407 18:07:08.262"></status>
+</kw>
+<kw name="Get Random String" library="RandomWordsUtil">
+<arguments>
+<arg>${CREDENTIAL_SIZE}</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${wordLength}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.262" level="INFO">${wordLength} = 5</msg>
+<status status="PASS" endtime="20160407 18:07:08.262" starttime="20160407 18:07:08.262"></status>
+</kw>
+<kw name="Get Random String" library="GenerateWordsLibrary">
+<arguments>
+<arg>${wordLength}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20160407 18:07:08.262" level="INFO">${value} = h55xM</msg>
+<status status="PASS" endtime="20160407 18:07:08.262" starttime="20160407 18:07:08.262"></status>
+</kw>
+<msg timestamp="20160407 18:07:08.262" level="INFO">${password} = h55xM</msg>
+<status status="PASS" endtime="20160407 18:07:08.262" starttime="20160407 18:07:08.262"></status>
+</kw>
+<kw name="Login To Clarabridge">
+<arguments>
+<arg>${login}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160407 18:07:08.262" level="FAIL">No keyword with name 'Login To Clarabridge' found.</msg>
+<status status="FAIL" endtime="20160407 18:07:08.262" starttime="20160407 18:07:08.262"></status>
+</kw>
+<status status="FAIL" endtime="20160407 18:07:08.262" critical="yes" starttime="20160407 18:07:08.262">No keyword with name 'Login To Clarabridge' found.</status>
+</test>
+<status status="FAIL" endtime="20160407 18:07:08.282" starttime="20160407 18:07:08.115"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="4" pass="0">Critical Tests</stat>
+<stat fail="4" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="4" id="s1" name="Clarabri-10001 PhythonLoginTest" pass="0">Clarabri-10001 PhythonLoginTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20160407 18:07:08.146" level="ERROR">Error in file 'd:\python_aducation\tat2016\QA_Robot_Practice\TestSuites\Clarabri-10001_PhythonLoginTest.robot': Importing test library 'd:\python_aducation\tat2016\QA_Robot_Practice\services\UI\LoginServiceUI.py' failed: ImportError: No module named pages
+Traceback (most recent call last):
+  File "d:\python_aducation\tat2016\QA_Robot_Practice\services\UI\LoginServiceUI.py", line 1, in &lt;module&gt;
+    from pages import LoginPage
+PYTHONPATH:
+  C:\WINDOWS\SYSTEM32\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages
+  C:\Python27\lib\site-packages\wx-2.8-msw-unicode</msg>
+<msg timestamp="20160407 18:07:08.179" level="ERROR">Error in file 'd:\python_aducation\tat2016\QA_Robot_Practice\TestSuites\Clarabri-10001_PhythonLoginTest.robot': Importing test library 'd:\python_aducation\tat2016\QA_Robot_Practice\services\UI\ManageProjectServiceUI.py' failed: ImportError: No module named pages.MainPage
+Traceback (most recent call last):
+  File "d:\python_aducation\tat2016\QA_Robot_Practice\services\UI\ManageProjectServiceUI.py", line 1, in &lt;module&gt;
+    from pages.MainPage import *
+PYTHONPATH:
+  C:\WINDOWS\SYSTEM32\python27.zip
+  C:\Python27\DLLs
+  C:\Python27\lib
+  C:\Python27\lib\plat-win
+  C:\Python27\lib\lib-tk
+  C:\Python27
+  C:\Python27\lib\site-packages
+  C:\Python27\lib\site-packages\wx-2.8-msw-unicode</msg>
+</errors>
+</robot>

@@ -37,4 +37,3 @@ Invalid Login And Password Test
     Login To Clarabridge    ${login}    ${password}
     Check Location    ${GlobalSettings.ERROR_URL}
     Check Error Message Presence
-    [Teardown]
