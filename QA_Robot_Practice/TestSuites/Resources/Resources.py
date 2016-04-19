@@ -1,4 +1,3 @@
-from globalConfig.GlobalSettings import GlobalSettings
 
 class Resources(object):
 
