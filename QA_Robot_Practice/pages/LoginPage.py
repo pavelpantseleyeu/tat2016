@@ -1,4 +1,3 @@
-from globalConfig.GlobalSettings import GlobalSettings
 from Selenium2Library import Selenium2Library as sel
 from pages import BasePage
 
