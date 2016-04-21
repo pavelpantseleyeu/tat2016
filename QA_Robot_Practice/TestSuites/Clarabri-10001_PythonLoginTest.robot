@@ -1,35 +1,40 @@
 *** Settings ***
-Suite Teardown    Close Browser
-Resource          Resources/Resources.robot
-Resource          ../utils/RandomWordsUtil.robot
-Resource          ../globalConfig/GlobalSettings.robot
-Resource          Resources/Resources.robot
-Library           ../services/UI/LoginServiceUI.py
-Library           ../services/UI/ManageProjectServiceUI.py
-Library           ../utils/DriverUtil.py
+Library           ../services/UI/LoginService.py
+Library           ../libraries/GenerateWordsLibrary.py
+Library           ../services/UI/NavigateService.py
+Library           ../globalConfig/GlobalSettings.py
+Library           Resources/Resources.py
 
 *** Test Cases ***
 Valid Credentials Test
-    LoginServiceUI.Login As Admin
-    ManageProjectserviceUI.Go To Projects Page
-    ManageProjectServiceUI.Check Location     ${WELCOM_URL}
-    [Teardown]     ManageProjectServiceUI.Sign Out
+    ${globalSettings}    Get Library Instance    GlobalSettings
+    Open Login Page    ${GlobalSettings.LOGIN_URL}
+    Login To Clarabridge
+    Go To Projects Page
+    Check Location    ${GlobalSettings.WELCOM_URL}
+    [Teardown]    Sign Out
 
 Invalid Login Test
-    ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    LoginServiceUI.Login To Clarabridge    ${login}    ${USER_PASSWORD}
-    ManageProjectServiceUI.Check Location    ${ERROR_URL}
-    LoginServiceUI.Check Error Message Presence
+    ${globalSettings}    Get Library Instance    GlobalSettings
+    ${resources}    Get Library Instance    Resources
+    ${login}    Get Random String    ${Resources.CREDENTIAL_SIZE}
+    Login To Clarabridge    ${login}    ${GlobalSettings.USER_PASSWORD}
+    Check Location    ${GlobalSettings.ERROR_URL}
+    Check Error Message Presence
 
 Invalid Password Test
-    ${password}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    LoginServiceUI.Login To Clarabridge    ${USER_LOGIN}    ${password}
-    ManageProjectServiceUI.Check Location    ${ERROR_URL}
-    LoginServiceUI.Check Error Message Presence
+    ${globalSettings}    Get Library Instance    GlobalSettings
+    ${resources}    Get Library Instance    Resources
+    ${password}   Get Random String    ${Resources.CREDENTIAL_SIZE}
+    Login To Clarabridge    ${GlobalSettings.USER_LOGIN}    ${password}
+    Check Location    ${GlobalSettings.ERROR_URL}
+    Check Error Message Presence
 
 Invalid Login And Password Test
-    ${login}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    ${password}    RandomWordsUtil.Get Random String    ${CREDENTIAL_SIZE}
-    LoginServiceUI.Login To Clarabridge    ${login}    ${password}
-    ManageProjectServiceUI.Check Location    ${ERROR_URL}
-    LoginServiceUI.Check Error Message Presence
+    ${globalSettings}    Get Library Instance    GlobalSettings
+    ${resources}    Get Library Instance    Resources
+    ${login}    Get Random String    ${Resources.CREDENTIAL_SIZE}
+    ${password}    Get Random String    ${Resources.CREDENTIAL_SIZE}
+    Login To Clarabridge    ${login}    ${password}
+    Check Location    ${GlobalSettings.ERROR_URL}
+    Check Error Message Presence
