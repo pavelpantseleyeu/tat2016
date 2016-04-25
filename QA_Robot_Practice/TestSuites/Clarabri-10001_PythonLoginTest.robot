@@ -11,6 +11,7 @@ Valid Credentials Test
     Open Login Page    ${GlobalSettings.LOGIN_URL}
     Login To Clarabridge
     Go To Projects Page
+    Parse Table
     Check Location    ${GlobalSettings.WELCOM_URL}
     [Teardown]    Sign Out
 

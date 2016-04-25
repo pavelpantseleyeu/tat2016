@@ -1,5 +1,6 @@
 from globalConfig import GlobalSettings
 from pages import LoginPage
+from libraries.WebTable import WebTable
 
 def open_login_page(url):
     LoginPage.open_browser_on_login_page(url)
@@ -12,3 +13,6 @@ def check_location(url):
 
 def check_error_message_presence():
     LoginPage.check_error_message()
+
+def parse_table():
+    WebTable(LoginPage.get_project_table())
