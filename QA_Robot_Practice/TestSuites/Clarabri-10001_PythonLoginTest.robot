@@ -1,5 +1,6 @@
 *** Settings ***
 Library           ../services/UI/LoginService.py
+Library           ../services/UI/ProjectsService.py
 Library           ../libraries/GenerateWordsLibrary.py
 Library           ../services/UI/NavigateService.py
 Library           ../globalConfig/GlobalSettings.py

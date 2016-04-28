@@ -8,7 +8,6 @@ ERROR_CASE_ELEMENT = "//font[@color='red']"
 OK_BUTTON_LOCATOR = "//div[@class='gwt-DialogBox'][3]//div[@class='okButton nowrap']"
 ERROR_COLOR_ATTRIBUTE = "color"
 ERROR_TEXT_COLOR = "red"
-PROJECT_TABLE_LOCATOR =  "//table[@class='pagingTable-body dataTable']"
 
 def open_browser_on_login_page(url):
     driver.open_browser(url)
@@ -34,5 +33,3 @@ def check_error_message():
     color = driver.get_webelement(ERROR_CASE_ELEMENT).get_attribute(ERROR_COLOR_ATTRIBUTE)
     assert color in ERROR_TEXT_COLOR
 
-def get_project_table():
-    return driver.get_webelement(PROJECT_TABLE_LOCATOR)

@@ -15,7 +15,7 @@ class WebTable(WebElement):
         :param webelement: WebElement which parent tag is TABLE
         """
         super(WebTable, self).__init__(webelement._parent, webelement._id)
-        self.log("Table:")
+        #self.log("Table:")
 
     def reload(self):
         pass
@@ -269,7 +269,7 @@ class WebTable(WebElement):
         list_body_rows = self.get_body_rows()
         for row in list_body_rows:
             tab.add_row([x.text.strip() for x in row])
-        tab.set_cols_width([15 for x in list_body_rows[0]])
+        tab.set_cols_width([25 for x in list_body_rows[0]])
         return tab.draw()
 
     def log(self, message):
