@@ -4,7 +4,7 @@
 The AN Jenkins Dockerfile is based on the official Jenkins image and contains the following additional software:
 
 ```RUN gpg --keyserver pgpkeys.mit.edu --recv-key  3EE67F3D0FF405B2``` 
-```    && gpg -a --export 3EE67F3D0FF405B2 | apt-key add -``` keys to prevent GPG error on firefox installation
+```    && gpg -a --export 3EE67F3D0FF405B2 | apt-key add -``` keys to prevent GPG error on firefox installation \\n
 ```    && echo "deb http://packages.linuxmint.com debian import >> /etc/apt/sources.list``` windowing packages
 ```    && apt-get update``` update installation packages
 ```    && apt-get install -y --force-yes sudo firefox xvfb python python-pip libpq-dev alien python-dev libaio1```
