@@ -4,10 +4,10 @@
 AN Jenkins Dockerfile is based on the official Jenkins image and contains the following additional software:
 
 ```RUN gpg --keyserver pgpkeys.mit.edu --recv-key  3EE67F3D0FF405B2``` 
-```    && gpg -a --export 3EE67F3D0FF405B2 | apt-key add -``` - keys to prevent GPG error on firefox installation \n  
-```    && echo "deb http://packages.linuxmint.com debian import >> /etc/apt/sources.list \``` - windowing packages \n
-```    && apt-get update \``` - update installation packages \n
-```    && apt-get install -y --force-yes sudo firefox xvfb python python-pip libpq-dev alien python-dev libaio1 \```
+```    && gpg -a --export 3EE67F3D0FF405B2 | apt-key add -``` - keys to prevent GPG error on firefox installation   
+```    && echo "deb http://packages.linuxmint.com debian import >> /etc/apt/sources.list``` - windowing packages
+```    && apt-get update``` - update installation packages
+```    && apt-get install -y --force-yes sudo firefox xvfb python python-pip libpq-dev alien python-dev libaio1```
 *firefox* - tests use this browser
 *xvfb* - screen emulator
 *python* - python libs
@@ -16,14 +16,14 @@ AN Jenkins Dockerfile is based on the official Jenkins image and contains the fo
 *alien* - this package helps to install *.rpm packages on Debian (Jenkins image is based on it)
 *python-dev* -  python libs
 *libaio1* - libs for Oracle instant client
-```    && curl -sSL https://get.docker.com/ | sh \``` - docker enables Jenkins to build environments for tests
-```    && rm -rf /var/lib/apt/lists/* \``` - removes files after installation
-```    && pip install --upgrade pip \``` - for installing software packages written on Python
-```    && pip install docker-compose \```  - docker-compose - makes starting stacks of containers simpler
-```    && echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers \``` - allows Jenkins user act without a password
-```    && alien -i /tmp/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm \``` - Oracle instant client modules required for cx_Oracle
-```    && alien -i /tmp/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm \```
-```    && rm -rf /tmp/*.rpm \``` - removes rpm packages after installation
+```    && curl -sSL https://get.docker.com/ | sh ``` - docker enables Jenkins to build environments for tests
+```    && rm -rf /var/lib/apt/lists/* ``` - removes files after installation
+```    && pip install --upgrade pip ``` - for installing software packages written on Python
+```    && pip install docker-compose ```  - docker-compose - makes starting stacks of containers simpler
+```    && echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers ``` - allows Jenkins user act without a password
+```    && alien -i /tmp/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm ``` - Oracle instant client modules required for cx_Oracle
+```    && alien -i /tmp/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm ```
+```    && rm -rf /tmp/*.rpm ``` - removes rpm packages after installation
 ```    && pip install cx_oracle``` - running DB tests against Oracle
 
 # Plugins
@@ -72,9 +72,5 @@ It uses the following volumes to exchange data with host:
 
 ```/var/run/docker.sock``` - to use host Docker for test containers
 
-```/ci/jenk/jenkins_home``` - Jenkins configs, jobs and logs
-
-```/ci/cmp``` - initial cmp installations
-```/ci/ci_cluster``` - former cmp installations
-```/ci/pipeline``` - new cmp installations
+```/an/jenkins-test/jenkins_home``` - JENKINS_HOME mounted to the native host. It contains Jenkins configs, jobs and logs
 
