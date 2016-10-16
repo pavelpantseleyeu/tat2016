@@ -22,12 +22,12 @@ def getProps(filePath){
 def setProps(file, prop, value ){
     def yaml = new org.yaml.snakeyaml.Yaml()
     def propsFile = readFile file
-    def proper = yaml.load(propsFile)
-    print proper
-    proper[prop] = value
-    print proper
-//    writeFile file: file, text: proper
-    return proper
+    def map = yaml.load(propsFile)
+    map[prop] = value
+    map = yaml.dump(map)
+    yaml.dump(map, new FileWriter(file))
+
+    return map
 }
 
 
