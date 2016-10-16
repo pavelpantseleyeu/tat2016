@@ -10,6 +10,8 @@ node('master') {
 
     def SUITES = common.readProps("suites.yml")
 
-println SUITES
+    for (i in SUITES['suites']){
+        println i
+    }
         
 }

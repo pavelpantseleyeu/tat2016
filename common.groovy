@@ -16,7 +16,7 @@ def readProps(filePath){
     def yaml = new org.yaml.snakeyaml.Yaml()
     def propsFile = readFile filePath
     def pr = yaml.load(propsFile)
-    print yaml.dump(pr)
+    return yaml.dump(pr, default_flow_style=True)
 }
 
 @NonCPS
