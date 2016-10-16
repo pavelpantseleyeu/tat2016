@@ -1,0 +1,205 @@
+an: an-jenk
+es: bart02
+index: 34$237804_2
+projectId: 237804
+clientRequestId: test-bart02-AN-407
+weeks: 104
+filter:
+  date:
+    startDate: 20140101
+    endDate:
+attributeTemplate:
+  size: 10
+  sortMetric:
+    displayName: volume
+    direction: desc
+    nullInclude: True
+metricsTemplate:
+  nullInclude: False
+
+attributes1:
+  - company_brand
+  - category_level3
+  - category
+  - product_name
+  - page_id
+
+attributes2:
+  - company_brand
+  - category_level3
+  - category
+  - product_name
+
+attributes3:
+  - company_brand
+  - category_level3
+  - category
+
+attributes41:
+  - name: company_brand
+    size: 1
+  - name: category_level3
+    size: 1
+  - name: category
+    size: 1
+  - name: product_name
+    size: 1
+  - name: page_id
+    size: 1
+
+attributes42:
+  - name: company_brand
+    size: 5
+  - name: category_level3
+    size: 1
+  - name: category
+    size: 1
+  - name: product_name
+    size: 1
+  - name: page_id
+    size: 1
+
+attributes43:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 1
+  - name: category
+    size: 1
+  - name: product_name
+    size: 1
+  - name: page_id
+    size: 1
+
+attributes44:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 5
+  - name: category
+    size: 1
+  - name: product_name
+    size: 1
+  - name: page_id
+    size: 1
+
+attributes45:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 10
+  - name: category
+    size: 1
+  - name: product_name
+    size: 1
+  - name: page_id
+    size: 1
+
+attributes46:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 10
+  - name: category
+    size: 5
+  - name: product_name
+    size: 1
+  - name: page_id
+    size: 1
+
+attributes47:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 10
+  - name: category
+    size: 10
+  - name: product_name
+    size: 1
+  - name: page_id
+    size: 1
+
+attributes48:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 10
+  - name: category
+    size: 10
+  - name: product_name
+    size: 5
+  - name: page_id
+    size: 1
+
+attributes49:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 10
+  - name: category
+    size: 10
+  - name: product_name
+    size: 10
+  - name: page_id
+    size: 1
+
+attributes50:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 10
+  - name: category
+    size: 10
+  - name: product_name
+    size: 10
+  - name: page_id
+    size: 5
+
+attributes51:
+  - name: company_brand
+    size: 10
+  - name: category_level3
+    size: 10
+  - name: category
+    size: 10
+  - name: product_name
+    size: 10
+  - name: page_id
+    size: 10
+
+metrics1:
+  - name: volume
+    type: sys
+  - name: sentiment
+    type: sys
+  - name: rating
+    type: avg
+    displayName: RATING
+  - name: quality
+    type: avg
+    displayName: QUALITY
+
+metrics2:
+  - name: volume
+    type: sys
+
+metrics3:
+  - name: volume
+    type: sys
+  - name: rating
+    type: avg
+    displayName: RATING
+
+metrics4:
+  - name: volume
+    type: sys
+  - name: rating
+    type: avg
+    displayName: RATING
+  - name: quality
+    type: avg
+    displayName: QUALITY
+
+metrics5:
+  - name: sentiment
+    type: sys
