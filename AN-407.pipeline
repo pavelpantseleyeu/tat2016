@@ -1,44 +1,15 @@
 node('master') {
-    def common = null
-    def es = null
-    def test = null
-    def LIB = 'testing/ci/pipeline/lib'
 
-    stage ('Prep.'){
-        parallel (
-            "AnLibrary" : {
-                build job: 'AnLibrary', propagate: true, wait: true
-            },
-            "Workspace" : {
-                build job: 'Prepare_job_for_deletion', propagate: true, wait: true
-                checkout([$class: 'GitSCM', branches: [[name: '*/${BRANCH}']], submoduleCfg: [],
-                    doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'WipeWorkspace']],
-                    userRemoteConfigs: [[credentialsId: '90e0b4a3-7478-40ab-8fa9-ad99f598623a',
-                    url: 'git@github.com:ClarabridgeInc/analytics-system.git']]])
-                dir(LIB){
-                    common = load "common.groovy"
-                    es = load "es.groovy"
-                    test = load "test.groovy"
-                }
-            }
-        )
-    }
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
+              
+    def common = load "common.groovy"
 
-    def TEST_DIR = 'testing/robot/TestSuite/AN-407_Gap/'
-    def ENV_CONF_DIR = 'testing/conf/'
-    def TEST_PROP = common._getProperties(TEST_DIR + "conf.yml")
-    def ES_PROP = common._getProperties(ENV_CONF_DIR + TEST_PROP."es" + ".yml")
-    def ES_URL = 'http://' + ES_PROP."hostAddress" + ':' + ES_PROP."port"
-    def ES_NODES = 4
-    def SUITES = common.readProperties{TEST_DIR + 'suites.yml'}
-    dir(TEST_DIR){
+    def SUITES = common.readProperties{'suites.yml'}
+
         for(suite in SUITES['suites']) {
             stage ("Test: ${suite}"){
-                es.waitForES(ES_URL, ES_NODES)
-                test.rfTest(suite, '.')
-                archiveArtifacts allowEmptyArchive: true,
-                artifacts: "artifacts/*.tar.gz,*.html,*.robot,*.yml,*pipeline,*.py,*.md,*.ipynb"
+                println suite        
                 }
             }
-        }
+        
 }
