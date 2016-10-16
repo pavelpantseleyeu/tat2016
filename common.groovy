@@ -22,11 +22,11 @@ def setProps(file, prop, value ){
     def yaml = new org.yaml.snakeyaml.Yaml()
     def map = getProps(file)
     map.put(prop, value)
-    def out = yaml.load(map.toString())
-    print out
-    yaml.dump(out, new FileWriter(file))
+//    def out = yaml.load(map.toString())
+//    print out
+//    yaml.dump(out, new FileWriter(file))
 
-    return out
+    return map
 }
 
 
