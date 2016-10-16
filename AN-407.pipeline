@@ -1,17 +1,18 @@
-//import groovy.json.JsonSlurperClassic
-//
 
- 
 node('master') {
 
     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
               
     def common = load "common.groovy"
 
-    def SUITES = common.readProps("suites.yml")
+    def SUITES = common.setProps("suites.yml", 'suites', ['suite1', 'suite2'])
+
 
     for (i in SUITES['suites']){
         println i
     }
-        
+
+    def new = readFile "suites.yml"
+
+            print new
 }

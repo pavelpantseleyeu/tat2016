@@ -12,12 +12,20 @@ def readProp2(path){
 }
 
 
-def readProps(filePath){
+def getProps(filePath){
     def yaml = new org.yaml.snakeyaml.Yaml()
     def propsFile = readFile filePath
     return yaml.load(propsFile)
-
 }
+
+def setProps(file, prop, value ){
+    def yaml = new org.yaml.snakeyaml.Yaml()
+    def prop = getProps(filePath)
+    prop[prop] = value
+    writeFile file: "filePath", text: yaml.dump(prop)
+    return prop
+}
+
 
 @NonCPS
 def loops(list){
