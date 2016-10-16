@@ -1,6 +1,6 @@
 import groovy.json.JsonSlurperClassic
-import groovy.SnakeYAML
-import groovy.yaml
+import SnakeYAML
+import yaml
 
  
 node('master') {
