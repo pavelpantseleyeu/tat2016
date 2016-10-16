@@ -21,7 +21,7 @@ def TEST_PROP = common._getProperties(PW + '/suite/conf.yml')
 print TEST_PROP
               
 
-    def SUITES = common.getProps(PW + '/suite/conf.yml')
+    def SUITES = common.getProps(PW + '/suite/suites.yml')
 
 //    def SUITES = common.getProps("suites.yml")
 
