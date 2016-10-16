@@ -10,6 +10,6 @@ node('master') {
 
     def SUITES = common.readProps("suites.yml")
 
-//    commom.loops(SUITES)
+println SUITES
         
 }
