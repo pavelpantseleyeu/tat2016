@@ -20,10 +20,10 @@ def getProps(filePath){
 
 def setProps(file, prop, value ){
     def yaml = new org.yaml.snakeyaml.Yaml()
-    def prop = getProps(filePath)
-    prop[prop] = value
-    writeFile file: "filePath", text: yaml.dump(prop)
-    return prop
+    def props = getProps(filePath)
+    props[prop] = value
+    writeFile file: "filePath", text: yaml.dump(props)
+    return props
 }
 
 
