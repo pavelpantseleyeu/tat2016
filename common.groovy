@@ -15,7 +15,7 @@ def readProp2(path){
 def readProps(filePath){
     def propsFile = readFile filePath
     def props = new Properties()
-    props.load(new StringReader(propsFile))
+    props.load(propsFile)
     return props 
 }
 
