@@ -7,7 +7,7 @@ node('master') {
     def SUITES = common.readProps{'suites.yml'}
 
         for(suite in SUITES['suites']) {
-                println suite
+                println ${suite}
 
             }
         
