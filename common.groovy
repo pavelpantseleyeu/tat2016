@@ -11,10 +11,10 @@ def readProp2(path){
     println item
 }
 
-
+@Grab(group='org.yaml', module='snakeyaml', version='1.13')
 def readProps(filePath){
-    @Grab(group='org.yaml', module='snakeyaml', version='1.13')
-    def yaml = new Yaml()
+
+    def yaml = new org.yaml.snakeyaml.Yaml()
     yaml.load(propsFile)
     def propsFile = readFile filePath
     print propsFile
