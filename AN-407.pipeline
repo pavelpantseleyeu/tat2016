@@ -1,3 +1,6 @@
+import Yaml
+
+ 
 node('master') {
 
     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
