@@ -1,29 +1,14 @@
 
 node('master') {
-def common = null
-    stage ('Prep.'){
+def common = load 'common.groovy'
 
-        parallel (
-            "AnLibrary" : {
-                build job: 'AnLibrary', propagate: true, wait: true
-            },
-            "Workspace" : {
-                build job: 'Prepare_job_for_deletion', propagate: true, wait: true
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
-                common = load "common.groovy"
 
-            }
-        )
-    }
 
-def PW = pwd()
-def TEST_PROP = common._getProperties(PW + '/suite/conf.yml')
+
 print TEST_PROP
               
 
-    def SUITES = common.getProps(PW + '/suite/suites.yml')
-
-//    def SUITES = common.getProps("suites.yml")
+    def SUITES = common.getProps('/suite/suites.yml')
 
     println SUITES
 
