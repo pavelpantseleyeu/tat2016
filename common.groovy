@@ -13,8 +13,9 @@ def readProp2(path){
 
 
 def readProps(filePath){
-    def props = new Properties()
-    props = readProperties filePath
+//    def propsFile = readFile filePath
+//    def props = new Properties()
+    def props = readProperties filePath
     return props 
 }
 
