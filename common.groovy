@@ -31,7 +31,7 @@ def setProps(file, prop, value ){
 
     map.put(prop, value)
     print map
-    yaml.dump(map, new FileWriter(file))
+//    yaml.dump(map, new FileWriter(file))
 
     return map
 }
