@@ -6,7 +6,6 @@ def _getProperties(filePath) {
     return props
 }
 
-@NonCPS
 def readProps(filePath){
     def props = readProperties filePath
     return props 
