@@ -1,8 +1,8 @@
 
 node('master') {
-
+def common = null
     stage ('Prep.'){
-        def common = null
+
         parallel (
             "AnLibrary" : {
                 build job: 'AnLibrary', propagate: true, wait: true
