@@ -1,8 +1,7 @@
 
-def getProps(filePath){
+def getJson(filePath){
     def input = new FileReader(filePath)
-    def InputJSON = new JsonSlurper().parseText(inputFile)
-    return InputJSON
+    return new JsonSlurper().parseText(inputFile)
 }
 
 
