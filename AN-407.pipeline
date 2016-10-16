@@ -6,7 +6,7 @@ node('master') {
     def common = load "common.groovy"
     def s = ['suite1', 'suite2']
 
-    def SUITES = common.getProps("suites.yml")
+    def SUITES = common.getProps('suites.yml')
 
 //    def SUITES = common.getProps("suites.yml")
 
