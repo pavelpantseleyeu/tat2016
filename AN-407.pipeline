@@ -5,10 +5,10 @@ def common = load 'common.groovy'
 
 
 
-
+PWD = pwd()
               
 
-    def SUITES = common.getProps('/suite/suites.yml')
+    def SUITES = common.getProps(PWD + '/suite/suites.yml')
 
     println SUITES
 
