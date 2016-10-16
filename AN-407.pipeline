@@ -6,9 +6,9 @@ node('master') {
 
     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
               
-    def common = load "common.groovy"
+//    def common = load "common.groovy"
 
-    def SUITES = common.readProp2{'suites.yml'}
+    def SUITES = load{'suites.yml'}
 
 //    commom.loops(SUITES)
         
