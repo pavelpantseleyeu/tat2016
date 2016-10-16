@@ -9,6 +9,6 @@ def getPropJson(filePath){
     def inputFile = new File(filePath)
     def InputJSON = new JsonSlurper().parseText(inputFile)
     return InputJSON
-    }
+}
 
 return this
