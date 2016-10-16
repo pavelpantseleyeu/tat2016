@@ -23,6 +23,7 @@ def setProps(file, prop, value ){
     def map = getProps(file)
     map.put(prop, value)
     def out = yaml.load(map)
+    print out
     yaml.dump(out, new FileWriter(file))
 
     return out
