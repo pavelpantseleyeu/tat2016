@@ -8,6 +8,8 @@ node('master') {
 
     def SUITES = common.setProps("suites.yml", 'suites', s)
 
+    println SUITES
+
 
     for (i in SUITES['suites']){
         println i
