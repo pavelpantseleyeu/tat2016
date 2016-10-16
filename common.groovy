@@ -14,8 +14,8 @@ def readProp2(path){
 
 def getProps(filePath){
     def yaml = new org.yaml.snakeyaml.Yaml()
-    def propsFile = readFile filePath
-    return yaml.load(propsFile)
+//    def propsFile = readFile filePath
+    return yaml.load(filePath)
 }
 
 def setProps(file, prop, value ){
