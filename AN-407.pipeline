@@ -1,5 +1,5 @@
-import groovy.json.JsonSlurperClassic
-@Grab(group='org.yaml', module='snakeyaml', version='1.13')
+//import groovy.json.JsonSlurperClassic
+//@Grab(group='org.yaml', module='snakeyaml', version='1.13')
 
  
 node('master') {
