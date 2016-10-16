@@ -6,9 +6,6 @@ node('master') {
 
     def SUITES = common.readProps{'suites.yml'}
 
-        for(def suite in SUITES['suites']) {
-                println ${suite}
-
-            }
+    commom.loops(SUITES)
         
 }
