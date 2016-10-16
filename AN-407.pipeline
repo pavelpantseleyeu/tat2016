@@ -8,7 +8,7 @@ def common = load 'common.groovy'
 PWD = pwd()
               
 
-    def SUITES = common.getPropertiesJson(PWD + '/suites.json')
+    def SUITES = common.getPropertiesJson('/suites.json')
 
     println SUITES
 
