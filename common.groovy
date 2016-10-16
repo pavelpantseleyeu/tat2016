@@ -6,10 +6,10 @@ def _getProperties(filePath) {
     return props
 }
 
-def readProp2(filePath){
-    def configFileYml = new Properties()
-    configFileYml.load(filePath)
-    println configFileYml
+def readProp2(path){
+    def prop = read path
+    def item = eval(YamlParser.parse(prop))
+    println item
 }
 
 
