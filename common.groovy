@@ -13,11 +13,16 @@ def readProp2(path){
 
 
 def readProps(filePath){
+    @Grab(group='org.yaml', module='snakeyaml', version='1.13')
+    def yaml = new Yaml()
+    yaml.load(propsFile)
     def propsFile = readFile filePath
     print propsFile
-    def slurper = new groovy.json.JsonSlurper()
-    def result = slurper.parseText(propsFile)
-    print result
+    des pr = yaml.load(propsFile)
+    print yaml.dump(pr)
+
+
+
 //    def props = new Properties()
 //    props.load(propsFile)
 //    return props
