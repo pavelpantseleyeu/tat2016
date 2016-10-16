@@ -5,7 +5,7 @@ def getProps(filePath){
     return yaml.load(input)
 }
 
-def getPropJson(filePath){
+def getPropertiesJson(filePath){
     def inputFile = new File(filePath)
     def InputJSON = new JsonSlurper().parseText(inputFile)
     return InputJSON
