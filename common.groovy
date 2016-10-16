@@ -20,7 +20,7 @@ def getProps(filePath){
 }
 
 def setProps(file, prop, value ){
-    DumperOptions options = new DumperOptions()
+    def options = new DumperOptions()
     options.setPrettyFlow(true)
     options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK)
     yaml = new org.yaml.snakeyaml.Yaml(options)
