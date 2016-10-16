@@ -22,7 +22,7 @@ def setProps(file, prop, value ){
     def yaml = new org.yaml.snakeyaml.Yaml()
     def props = getProps(filePath)
     props[prop] = value
-    writeFile file: "filePath", text: yaml.dump(props)
+    writeFile file: file, text: yaml.dump(props)
     return props
 }
 
