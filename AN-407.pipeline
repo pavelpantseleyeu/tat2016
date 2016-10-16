@@ -8,7 +8,7 @@ node('master') {
               
 //    def common = load "common.groovy"
 
-    def SUITES = load{'suites.yml'}
+    def SUITES = readFile "suites.yml"
 
 //    commom.loops(SUITES)
         
