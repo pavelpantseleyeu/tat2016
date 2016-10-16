@@ -1,4 +1,4 @@
-import groovy.Yaml
+import groovy.json.JsonSlurperClassic
 
  
 node('master') {
