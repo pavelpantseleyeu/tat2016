@@ -22,7 +22,7 @@ def getProps(filePath){
 def setProps(file, prop, value ){
     def options = new org.yaml.snakeyaml.DumperOptions()
     options.setPrettyFlow(true)
-    options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK)
+    options.setDefaultFlowStyle(org.yaml.snakeyaml.DumperOptions.FlowStyle.BLOCK)
     yaml = new org.yaml.snakeyaml.Yaml(options)
 
     def propsFile = readFile file
