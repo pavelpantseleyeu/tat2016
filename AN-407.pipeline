@@ -2,7 +2,7 @@
 node('master') {
 def common = load 'common.groovy'
 
-checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
+checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'WipeWorkspace']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
 
 
 PWD = pwd()
