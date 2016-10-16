@@ -20,7 +20,7 @@ def common = null
 
               
     def PW = pwd()
-    def SUITES = common.getProps(PW + 'suite/suites.yml')
+    def SUITES = common.getProps(PW + '/suite/suites.yml')
 
 //    def SUITES = common.getProps("suites.yml")
 
