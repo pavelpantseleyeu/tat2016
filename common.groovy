@@ -14,9 +14,13 @@ def readProp2(path){
 
 def readProps(filePath){
     def propsFile = readFile filePath
-    def props = new Properties()
-    props.load(propsFile)
-    return props 
+    print propsFile
+    def slurper = new groovy.json.JsonSlurper()
+    def result = slurper.parseText(propsFile)
+    print result
+//    def props = new Properties()
+//    props.load(propsFile)
+//    return props
 }
 
 @NonCPS
