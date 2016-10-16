@@ -7,7 +7,7 @@ def _getProperties(filePath) {
 }
 
 def readProp2(path){
-    def item = eval(YamlParser.parse(path))
+    def item = load(path)
     println item
 }
 
