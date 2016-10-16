@@ -1,3 +1,5 @@
+import Yaml
+
 def _getProperties(filePath) {
     def propsFile = readFile filePath
     propsFile = propsFile.replace(':', '=').replace('  ','').replace('    ','').replace('-','').replace(' ','')
