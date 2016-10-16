@@ -26,7 +26,7 @@ def setProps(file, prop, value ){
     print proper
     proper[prop] = value
     print proper
-    writeFile file: file, text: proper
+//    writeFile file: file, text: proper
     return proper
 }
 
