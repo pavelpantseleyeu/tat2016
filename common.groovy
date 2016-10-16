@@ -7,7 +7,7 @@ def _getProperties(filePath) {
 }
 
 def readProp2(filePath){
-    Yaml configFileYml = new Yaml()
+    def configFileYml = new Yaml()
     configFileYml.load(filePath)
     println configFileYml
 }
