@@ -1,4 +1,4 @@
-import Yaml
+import groovy.Yaml
 
  
 node('master') {
