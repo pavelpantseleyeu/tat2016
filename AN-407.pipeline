@@ -5,7 +5,7 @@ def common = load 'common.groovy'
 
 
 
-print TEST_PROP
+
               
 
     def SUITES = common.getProps('/suite/suites.yml')
