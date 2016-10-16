@@ -27,6 +27,7 @@ def setProps(file, prop, value ){
 
     def propsFile = readFile file
     def map = yaml.load(propsFile)
+    print map
     map[prop] = value
     map = yaml.dump(map)
     yaml.dump(map, new FileWriter(file))
