@@ -26,6 +26,7 @@ def setProps(file, prop, value ){
     yaml = new org.yaml.snakeyaml.Yaml(options)
 
     def propsFile = readFile file
+    print propsFile
     def map = yaml.load(propsFile)
 
 
