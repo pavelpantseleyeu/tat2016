@@ -23,7 +23,7 @@ def setProps(file, prop, value ){
     def options = new org.yaml.snakeyaml.DumperOptions()
     options.setPrettyFlow(true)
     options.setDefaultFlowStyle(org.yaml.snakeyaml.DumperOptions.FlowStyle.BLOCK)
-    yaml = new org.yaml.snakeyaml.Yaml(options)
+    yaml = new org.yaml.snakeyaml.Yaml()
 
     def propsFile = readFile file
     print propsFile
