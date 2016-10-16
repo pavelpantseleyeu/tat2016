@@ -13,7 +13,7 @@ PWD = pwd()
     println SUITES
 
 
-    for (i in SUITES['suites']){
+    for (i in SUITES.suites){
         println i
     }
 
