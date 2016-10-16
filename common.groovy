@@ -1,7 +1,9 @@
 
 def getJson(filePath){
     def input = new FileReader(filePath)
-    return new groovy.json.JsonSlurper().parseText(input)
+    def slurper = new groovy.json.JsonSlurper()
+    def text = slurper.parseText(input)
+    return text
 }
 
 
