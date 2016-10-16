@@ -11,4 +11,10 @@ def readProps(filePath){
     return props 
 }
 
+def loops(list){
+    for (item in list){
+        println item
+    }
+}
+
 return this
