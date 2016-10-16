@@ -4,12 +4,11 @@ node('master') {
               
     def common = load "common.groovy"
 
-    def SUITES = common.readProperties{'suites.yml'}
+    def SUITES = common.readProps{'suites.yml'}
 
         for(suite in SUITES['suites']) {
-            stage ("Test: ${suite}"){
-                println suite        
-                }
+                println suite
+
             }
         
 }
