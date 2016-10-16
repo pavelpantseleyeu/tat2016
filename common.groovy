@@ -23,11 +23,11 @@ def setProps(file, prop, value ){
 //    def yaml = new org.yaml.snakeyaml.Yaml()
     def props = getProps(file)
     def proper = yaml.load(props)
-    print props
-//    props[prop] = value
-    print props
-//    writeFile file: file, text: props
-    return props
+    print proper
+//    proper[prop] = value
+    print proper
+//    writeFile file: file, text: proper
+    return proper
 }
 
 
