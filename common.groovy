@@ -6,6 +6,13 @@ def _getProperties(filePath) {
     return props
 }
 
+def readProp2(filePath){
+    Yaml configFileYml = new Yaml()
+    configFileYml.load(filePath)
+    println configFileYml
+}
+
+
 def readProps(filePath){
     def props = new Properties()
     props = readProperties filePath
