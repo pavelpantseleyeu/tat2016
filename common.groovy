@@ -19,16 +19,7 @@ def getProps(filePath){
 }
 
 def setProps(file, prop, value ){
-    def options = new org.yaml.snakeyaml.DumperOptions()
-    options.setPrettyFlow(true)
-    options.setDefaultFlowStyle(org.yaml.snakeyaml.DumperOptions.FlowStyle.BLOCK)
-    yaml = new org.yaml.snakeyaml.Yaml()
-
-    def propsFile = readFile file
-    print propsFile
-    def map = yaml.load(propsFile)
-
-
+    def map = getProps(file)
     map.put(prop, value)
     print map
 //    yaml.dump(map, new FileWriter(file))
