@@ -11,6 +11,7 @@ def readProps(filePath){
     return props 
 }
 
+@NonCPS
 def loops(list){
     for (item in list){
         println item
