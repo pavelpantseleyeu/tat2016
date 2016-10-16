@@ -24,7 +24,7 @@ def setProps(file, prop, value ){
     map.put(prop, value)
     def out = syaml.load(map)
     print out
-    syaml.dump(out, new FileWriter(file))
+    yaml.dump(out, new FileWriter(file))
 
     return map
 }
