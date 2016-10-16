@@ -27,10 +27,10 @@ def setProps(file, prop, value ){
 
     def propsFile = readFile file
     def map = yaml.load(propsFile)
-    map = yaml.dump(map)
-    print map
-    map.put(prop, value)
 
+
+    map.put(prop, value)
+    print map
     yaml.dump(map, new FileWriter(file))
 
     return map
