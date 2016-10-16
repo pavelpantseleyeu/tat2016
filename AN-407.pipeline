@@ -17,7 +17,8 @@ def common = null
     }
 
 
-
+def TEST_PROP = common._getProperties('/suite/conf.yml')
+print TEST_PROP
               
     def PW = pwd()
     def SUITES = common.getProps(PW + '/suite/conf.yml')
