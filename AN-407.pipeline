@@ -4,7 +4,7 @@ node('master') {
               
     def common = load "common.groovy"
 
-    def SUITES = common.readProps{'suites.yml'}
+    def SUITES = common.readProp2{'suites.yml'}
 
 //    commom.loops(SUITES)
         
