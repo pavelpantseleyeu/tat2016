@@ -12,7 +12,7 @@ node('master') {
         println i
     }
 
-    def new = readFile "suites.yml"
+    def newFile = readFile "suites.yml"
 
-            print new
+            print newFile
 }
