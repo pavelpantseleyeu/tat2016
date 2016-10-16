@@ -7,7 +7,8 @@ def _getProperties(filePath) {
 }
 
 def readProps(filePath){
-    def props = readProperties filePath
+    def propsFile = readFile filePath
+    def props = readProperties propsFile
     return props 
 }
 
