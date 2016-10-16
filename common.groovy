@@ -19,11 +19,12 @@ def getProps(filePath){
 }
 
 def setProps(file, prop, value ){
+    def syaml = new org.yaml.snakeyaml.Yaml()
     def map = getProps(file)
     map.put(prop, value)
-    def out = yaml.load(map)
+    def out = syaml.load(map)
     print out
-    yaml.dump(out, new FileWriter(file))
+    syaml.dump(out, new FileWriter(file))
 
     return map
 }
