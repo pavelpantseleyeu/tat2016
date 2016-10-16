@@ -8,7 +8,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 PWD = pwd()
               
 
-    def SUITES = common.getProps(PWD + '/suites.json')
+    def SUITES = common.getJson(PWD + '/suites.json')
 
     println SUITES
 
