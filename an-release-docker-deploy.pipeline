@@ -14,17 +14,8 @@ node('master') {
     def AN_PORT = '1820'
 
     stage ('Prep'){
-        parallel (
-            "Remove AN" : {
-                docker.stopContainer(NAME)
-                docker.removeContainer(NAME)
-                docker.removeImage(IMG_NAME)
-            },
-            "Get new AN (Nexus)" : {
-                def fileName = common.getFile(VERSION)
-                common.setFileNameInDockerfile(DF_PATH, fileName)
-            }
-        )
+        def fileName = common.getFile(VERSION)
+        common.setFileNameInDockerfile(DF_PATH, fileName)
     }
     stage 'Build'
         docker.buildImage(IMG_NAME, DF_NAME, RES)
