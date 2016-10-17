@@ -39,7 +39,7 @@ def _getFileByPattern(url, version, pattern){
     println version
     println pattern
     def collection = _getHttpResponse(url + version)
-    print collection
+    print collection.size()
     for (int i=0; i<collection.size(); i++){
         def file = collection[i].text()
         if (file == 'clarabridge-analytics-server-' + version + pattern) {
