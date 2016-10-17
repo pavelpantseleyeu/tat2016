@@ -4,8 +4,8 @@ node('master') {
             [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
 
     def SOURCE = '.'
-    def docker = load "${SOURCE}\\lib\\docker.groovy"
-    def common = load "${SOURCE}\\lib\\common.groovy"
+    def docker = load "${SOURCE}\\docker.groovy"
+    def common = load "${SOURCE}\\common.groovy"
     def RES = SOURCE
     def NAME = 'an_release_' + VERSION
     def IMG_NAME = docker._getImgName(NAME, VERSION)
