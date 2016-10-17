@@ -1,13 +1,12 @@
 node('master') {
     stage 'Checkout'
-    checkout([$class: 'GitSCM', branches: [[name: "*/${BRANCH}"]], doGenerateSubmoduleConfigurations: false, extensions:
-            [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '90e0b4a3-7478-40ab-8fa9-ad99f598623a',
-            url: 'git@github.com:ClarabridgeInc/analytics-system.git']]])
+    checkout([$class: 'GitSCM', branches: [[name: "*/master"]], doGenerateSubmoduleConfigurations: false, extensions:
+            [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/pavelpantseleyeu/tat2016.git']]])
 
-    def SOURCE = 'testing/ci/pipeline'
+    def SOURCE = '.'
     def docker = load "${SOURCE}\\lib\\docker.groovy"
     def common = load "${SOURCE}\\lib\\common.groovy"
-    def RES = SOURCE + "/res/"
+    def RES = SOURCE
     def NAME = 'an_release_' + VERSION
     def IMG_NAME = docker._getImgName(NAME, VERSION)
     def DF_NAME = 'an.dockerfile'
